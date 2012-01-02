@@ -1,0 +1,27 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.browser.*
+import fr.nfan.controller.*
+
+component AnkiMainEditFact {
+	VBox id ankiEditFact {
+		call VBox#vgrow : "ALWAYS",
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		visible : false,
+		children : [
+			include AnkiBrowserFactToolBar,
+			include AnkiBrowserViewFact,
+			HBox {
+				children : [
+					Button {
+						text : "Continue Review",
+						prefWidth : 3000
+					}
+				]
+			}
+		]
+	}
+}

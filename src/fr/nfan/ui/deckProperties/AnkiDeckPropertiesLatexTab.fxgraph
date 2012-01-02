@@ -1,0 +1,26 @@
+package fr.nfan.ui.deckProperties
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiDeckPropertiesLatexTab {
+	Tab {
+		text : "Latex",
+		closable : false,
+		content : [
+			VBox {
+				style : "-fx-padding: 5 5 5 5",
+				children : [
+					Label {
+						text : "Header"
+					},
+					TextArea,
+					Label {
+						text : "Footer"
+					},
+					TextArea
+				]
+			}
+		]
+	}
+}

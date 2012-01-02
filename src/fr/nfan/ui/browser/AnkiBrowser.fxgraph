@@ -1,0 +1,31 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import fr.nfan.ui.browser.*
+
+component AnkiBrowser {
+	VBox {
+		minWidth : 300,
+		children : [
+			include AnkiBrowserMenu,
+			include AnkiBrowserToolBar,
+			include AnkiBrowserSearchBar,
+			include AnkiBrowserCardsGrid,
+			HBox {
+				minHeight : 170,
+				//call VBox#vgrow : "ALWAYS",
+				children : [
+					VBox {
+						call HBox#hgrow : "ALWAYS",
+						children : [
+							include AnkiBrowserFactToolBar,
+							include AnkiBrowserViewFact
+						]
+					},
+					include AnkiBrowserCurrentCardInfo
+				]
+			}
+			
+		]
+	}
+}

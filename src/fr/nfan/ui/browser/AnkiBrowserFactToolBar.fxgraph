@@ -1,0 +1,25 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiBrowserFactToolBar controlledby MainToolBarController {
+	ToolBar {
+		items : [
+			Button {
+				text : "Card Layout",
+				onAction : controllermethod onCardLayoutClick
+			},
+			Button {
+				text : "B"
+			},
+			Button {
+				text : "I"
+			},
+			Button {
+				text : "U"
+			}
+		]
+	}
+}

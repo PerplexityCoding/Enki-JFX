@@ -1,0 +1,59 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiFileExport controlledby MainController {
+	VBox id ankiFileExport {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 10,
+		children : [
+			HBox {
+				children : [
+					Label {
+						text : "Export format:",
+						minWidth : 100
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Limit to tags:",
+						prefWidth : 100,
+						minHeight : 22
+					},
+					TextField {
+						call HBox#hgrow : "ALWAYS"
+					}
+				]
+			},
+			HBox {
+				children : [
+					CheckBox {
+						text : "Include scheduling information"
+					}
+				]
+			},
+			Separator,
+			HBox {
+				style : "-fx-padding: 0 5 5 0",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "Export..."
+					},
+					Button {
+						text : "Cancel",
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

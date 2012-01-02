@@ -1,0 +1,64 @@
+package fr.nfan.ui.preferences
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiPreferencesAdvanced {
+	Tab {
+		text : "Advanced",
+		closable : false,
+		content : [
+			VBox {
+				style : "-fx-padding: 5 10 10 5",
+				spacing : 5,
+				children : [
+					CheckBox {
+						text : "Alternative themes"
+					},
+					CheckBox {
+						text : "Colour next times"
+					},
+					CheckBox {
+						text : "Show timer"
+					},
+					CheckBox {
+						text : "Show tray icon"
+					},
+					CheckBox {
+						text : "Strip HTML when pasting text"
+					},
+					CheckBox {
+						text : "Show study options on deck load"
+					},
+					CheckBox {
+						text : "Always open last deck on startup"
+					},
+					CheckBox {
+						text : "Show decks with cards due first in browser"
+					},
+					CheckBox {
+						text : "Optimize for small screen"
+					},
+					CheckBox {
+						text : "Delete original media on add"
+					},
+					CheckBox {
+						text : "Add hidden char to text (fixes Thai on OSX)"
+					},
+					HBox {
+						spacing : 10,
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Max Deck name length in deck browser:"
+							},
+							TextField {
+								prefWidth : 40
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

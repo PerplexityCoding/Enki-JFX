@@ -1,0 +1,26 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.collections.*
+
+component AnkiBrowserSearchBar {
+	HBox id browserSearchBar {
+		children : [
+			Label {
+				text : "Search:"
+			},
+			TextField id searchText {
+				call HBox#hgrow : "ALWAYS"
+			},
+			Label {
+				text : "Filter:"
+			},
+			ChoiceBox id browserFilter,
+			Label {
+				text : "Sort:"
+			},
+			ChoiceBox id sortFilter
+		]
+	}
+}

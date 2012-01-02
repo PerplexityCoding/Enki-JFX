@@ -1,0 +1,79 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.geometry.*
+
+component AnkiBrowserViewFact {
+	HBox id viewFactGridBox {
+		//maxHeight : 230,
+		call VBox#vgrow : "ALWAYS",
+		children : [
+			GridPane {
+				call HBox#hgrow : "ALWAYS",
+				children : [
+					Label {
+						minWidth : 80,
+						prefWidth : 130,
+						text : "Expression",
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 0
+					},
+					TextArea {
+						text : "Blah",
+						call GridPane#hgrow : "ALWAYS",
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 1
+					},
+					Label {
+						text : "Expression",
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 0
+					},
+					TextArea {
+						text : "Blah",
+						call GridPane#hgrow : "ALWAYS",
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 1
+					},
+					Label {
+						text : "Expression",
+						call GridPane#rowIndex : 2,
+						call GridPane#columnIndex : 0
+					},
+					TextArea {
+						text : "Blah",
+						call GridPane#hgrow : "ALWAYS",
+						call GridPane#rowIndex : 2,
+						call GridPane#columnIndex : 1
+					},
+					Label {
+						text : "Expression",
+						call GridPane#rowIndex : 3,
+						call GridPane#columnIndex : 0
+					},
+					TextArea {
+						text : "Blah",
+						call GridPane#hgrow : "ALWAYS",
+						call GridPane#rowIndex : 3,
+						call GridPane#columnIndex : 1
+					},
+					Label {
+						text : "Expression",
+						call GridPane#rowIndex : 4,
+						call GridPane#columnIndex : 0
+					},
+					TextArea {
+						text : "Blah",
+						call GridPane#hgrow : "ALWAYS",
+						call GridPane#rowIndex : 4,
+						call GridPane#columnIndex : 1
+					}
+				]
+			},
+			ScrollBar {
+				orientation : "VERTICAL"
+			}
+		]
+	}
+}

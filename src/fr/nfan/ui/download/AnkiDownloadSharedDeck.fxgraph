@@ -1,0 +1,129 @@
+package fr.nfan.ui.download
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.common.*
+import fr.nfan.controller.*
+
+component AnkiDownloadSharedDeck controlledby MainController {
+	VBox {
+		style : "-fx-padding: 10 10 5 10",
+		spacing : 5,
+		children : [
+			HBox {
+				spacing : 5,
+				children : [
+					Label {
+						text : "Search:"
+					},
+					TextField {
+						call HBox#hgrow : "ALWAYS"
+					}
+				]
+			},
+			SplitPane {
+				orientation : "VERTICAL",
+				call HBox#hgrow : "ALWAYS",
+				items : [
+					TableView,
+					VBox {
+						style : "-fx-padding: 5 5 5 5",
+						children : [
+							HBox {
+								spacing : 5,
+								children : [
+									Label {
+										text : "Title: ",
+										style : "-fx-font-weight: bold"
+									},
+									Label {
+										text : "Japanese Kana"
+									}
+								]
+							},
+							HBox {
+								spacing : 5,
+								children : [
+									Label {
+										text : "Tags: ",
+										style : "-fx-font-weight: bold"
+									},
+									Label {
+										text : "Japanese Kana language"
+									}
+								]
+							},
+							HBox {
+								spacing : 5,
+								children : [
+									Label {
+										text : "Size: ",
+										style : "-fx-font-weight: bold"
+									},
+									Label {
+										text : "41.34 kb"
+									}
+								]
+							},
+							HBox {
+								spacing : 5,
+								children : [
+									Label {
+										text : "Uploader: ",
+										style : "-fx-font-weight: bold"
+									},
+									Label {
+										text : "None"
+									}
+								]
+							},
+							HBox {
+								spacing : 5,
+								children : [
+									Label {
+										text : "Downloads: ",
+										style : "-fx-font-weight: bold"
+									},
+									Label {
+										text : "3345"
+									}
+								]
+							},
+							HBox {
+								spacing : 5,
+								children : [
+									Label {
+										text : "Modified: ",
+										style : "-fx-font-weight: bold"
+									},
+									Label {
+										text : "2.5 years ago"
+									}
+								]
+							},
+							Label {
+								wrapText : true,
+								text : "Hiragana and Katakana syllabaries for Japanese.\n
+										Comments or suggestions to: asgrim@gmail.com"
+							}
+						]
+					}
+				]
+			},
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "Save &amp; Close"
+					},
+					Button {
+						text : "Cancel",
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

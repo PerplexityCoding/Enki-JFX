@@ -1,0 +1,136 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.web.*
+import fr.nfan.controller.*
+
+component AnkiBrowserMenu controlledby BrowserMenuController {
+	MenuBar {
+		menus : [
+			Menu {
+				text : rstring "browser.menu.actions",
+				items : [
+					MenuItem {
+						text : rstring "browser.menu.actions.add_items",
+						onAction : controllermethod onAddFactClick
+					},
+					MenuItem {
+						text : rstring "browser.menu.actions.generate_cards",
+						onAction : controllermethod onGenerateCardsClick
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.actions.add_tags",
+						onAction : controllermethod onAddTagsClick
+					},
+					MenuItem {
+						text : rstring "browser.menu.actions.delete_tags",
+						onAction : controllermethod onDeleteTagsClick
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.actions.toggle_suspend"
+					},
+					MenuItem {
+						text : rstring "browser.menu.actions.toggle_mark"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.actions.change_model",
+						onAction : controllermethod onBrowserChangeModelClick
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.actions.cram",
+						onAction : controllermethod onCramClick
+					},
+					MenuItem {
+						text : rstring "browser.menu.actions.reschedule",
+						onAction : controllermethod onBrowserRescheduleClick
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.actions.delete"
+					}
+				]
+			},
+			Menu {
+				text : rstring "browser.menu.edit",
+				items : [
+					MenuItem {
+						text : rstring "browser.menu.edit.undo"
+					},
+					MenuItem {
+						text : rstring "browser.menu.edit.redo"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.edit.select_all"
+					},
+					MenuItem {
+						text : rstring "browser.menu.edit.select_facts"
+					},
+					MenuItem {
+						text : rstring "browser.menu.edit.invert_selection"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.edit.find_and_replace",
+						onAction : controllermethod onFindAndReplaceClick
+					},
+					MenuItem {
+						text : rstring "browser.menu.edit.find_duplicates",
+						onAction : controllermethod onFindDuplicatesClick
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.edit.font",
+						onAction : controllermethod onBrowserFontClick
+					}
+				]
+			},
+			Menu {
+				text : rstring "browser.menu.go",
+				items : [
+					MenuItem {
+						text : rstring "browser.menu.go.find"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.filters"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.sort"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.fact"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.card_list"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "browser.menu.go.first_card"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.previous_card"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.next_card"
+					},
+					MenuItem {
+						text : rstring "browser.menu.go.last_card"
+					}
+				]
+			},
+			Menu {
+				text : rstring "browser.menu.help",
+				items : [
+					MenuItem {
+						text : rstring "browser.menu.help.documentation"
+					}
+				]
+			}
+		]
+	}
+}

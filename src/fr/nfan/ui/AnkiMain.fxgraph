@@ -1,0 +1,28 @@
+import javafx.scene.layout.*
+import fr.nfan.ui.*
+import fr.nfan.ui.studyOptions.*
+
+component AnkiMain {
+	VBox {
+		minWidth : 200,
+		children : [
+			include AnkiMainMenu,
+			include AnkiMainToolBar,
+			VBox id ankiMainDeckPane {
+				alignment : "CENTER",
+				style : "-fx-padding: 20 20 20 20",
+				children : [
+					StackPane {
+						children : [
+							include AnkiMainDecks,
+							include AnkiMainStudyOptions,
+							include AnkiMainEditFact,
+							include AnkiMainStudyQuestion,
+							include AnkiMainStudyResponse
+						]
+					}
+				]
+			}
+		]
+	}
+}

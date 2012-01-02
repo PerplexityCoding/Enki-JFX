@@ -1,0 +1,130 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.control.GridPane.*
+import javafx.scene.shape.*
+import javafx.scene.layout.Priority.*
+import fr.nfan.controller.*
+
+component AnkiMainDecks controlledby MainController {
+	VBox id ankiMainDeck {
+		maxWidth : 700,
+		minWidth : 400,
+		minHeight : 200,
+		maxHeight : 500,
+		spacing : 5,
+		style : "-fx-padding: 5 5 5 5",
+		children : [
+			BorderPane id deckTitle {
+				center : [ 
+					Label {
+						text : "Decks"
+					}
+				]
+			},
+			Separator,
+			GridPane id decksGridPane {
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					Label id deckName  {
+						text : "Deck Name",
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 0,
+						call GridPane#hgrow : "ALWAYS",
+						style : "-fx-font-weight: bold"
+					},
+					Label  {
+						text : "Due Today",
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 1,
+						style : "-fx-font-weight: bold"
+					},
+					Label {
+						text : "New Today",
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 2,
+						style : "-fx-font-weight: bold"
+					},
+					Label id deckName  {
+						text : "RTK 3 KANji Poweerrrr",
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 0,
+						call GridPane#hgrow : "ALWAYS"
+					},
+					Label  {
+						text : "36",
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 1
+					},
+					Label {
+						text : "15",
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 2
+					},
+					HBox {
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 3,
+						spacing : 5,
+						children : [
+							Button {
+								text : "Open",
+								onAction : controllermethod onOpenDeck
+							},
+							Button {
+								text : "Hide"
+							},
+							Button {
+								text : "Delete"
+							}
+						]
+					}					
+				],
+				columnConstraints : [
+					ColumnConstraints {
+						minWidth : 130
+					},
+					ColumnConstraints {
+						minWidth : 30
+					},
+					ColumnConstraints {
+						minWidth : 30
+					},
+					ColumnConstraints {
+						minWidth : 160
+					}
+				]
+				
+			},
+			Separator,
+			VBox {
+				alignment : "CENTER",
+				children : [
+					Label {
+						text : "Studies 242 cards in 37,86 minutes today"
+					},
+					Label {
+						text : "Due: 14 reviews, 0 new cards"
+					}
+				]
+			},
+			Separator,
+			HBox {
+				alignment : "CENTER",
+				spacing : 5,
+				children : [
+					Button {
+						text : "Download"
+					},
+					Button {
+						text : "Create"
+					},
+					Button {
+						text : "Import"
+					}
+				]
+			}
+			
+		]
+	}
+}

@@ -1,0 +1,103 @@
+package fr.nfan.ui.preferences
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiPreferencesNetwork {
+	Tab {
+		text : "Network",
+		closable : false,
+		content : [
+			VBox id ankiPreferencesNetwork {
+				style : "-fx-padding: 5 10 10 5",
+				spacing : 5,
+				children : [
+					Label {
+						text : "Synchronisation"
+					},
+					Hyperlink {
+						text : "Create a free account"
+					},
+					HBox {
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Username",
+								prefWidth : 70
+							},
+							TextField {
+								call HBox#hgrow : "ALWAYS"
+							}
+						]
+					},
+					HBox {
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Password",
+								prefWidth : 70
+							},
+							TextField {
+								call HBox#hgrow : "ALWAYS"
+							}
+						]
+					},
+					CheckBox {
+						text : "Sync on deck open/close"
+					},
+					CheckBox {
+						text : "Sync on program open/close"
+					},
+					CheckBox {
+						text : "Disable sync when deck moved"
+					},
+					Separator,
+					Label {
+						text : "Proxy"
+					},
+					HBox {
+						spacing : 20,
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Host",
+								prefWidth : 30
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "Port",
+								prefWidth : 30
+							},
+							TextField {
+								prefWidth : 50
+							}
+						]
+					},
+					HBox {
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Username",
+								prefWidth : 70
+							},
+							TextField
+						]
+					},
+					HBox {
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Password",
+								prefWidth : 70
+							},
+							TextField
+						]
+					}
+				]
+				
+			}
+		]
+	}
+}

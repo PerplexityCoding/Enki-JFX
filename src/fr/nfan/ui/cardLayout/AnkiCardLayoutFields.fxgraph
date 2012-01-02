@@ -1,0 +1,154 @@
+package fr.nfan.ui.cardLayout
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiCardLayoutFields {
+	VBox {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 7,
+		children : [
+			HBox {
+				spacing : 5,
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					ListView {
+						call HBox#hgrow : "ALWAYS"
+					},
+					VBox {
+						spacing : 5,
+						children : [
+							Button {
+								text : "Add",
+								prefWidth : 80
+							},
+							Button {
+								text : "Up",
+								prefWidth : 80
+							},
+							Button {
+								text : "Down",
+								prefWidth : 80
+							},
+							Button {
+								text : "Delete",
+								prefWidth : 80
+							}
+						]
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Name",
+						minWidth : 60,
+						maxWidth : 60
+					},
+					TextField {
+						call HBox#hgrow : "ALWAYS"
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Font",
+						minWidth : 60,
+						maxWidth : 60
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			},
+			HBox {
+				spacing : 10,
+				children : [
+					Label {
+						text : "Size",
+						minWidth : 60,
+						maxWidth : 60
+					},
+					Label {
+						text : "Reviewing"
+					},
+					TextField {
+						prefWidth : 40
+					},
+					Label {
+						text : "Editing"
+					},
+					TextField {
+						prefWidth : 40
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Color",
+						minWidth : 60,
+						maxWidth : 60
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Options",
+						minWidth : 60,
+						maxWidth : 60
+					},
+					VBox {
+						children : [
+							HBox {
+								children : [
+									CheckBox,
+									Label {
+										text : "Prevent duplicates"
+									}
+								]
+							},
+							HBox {
+								children : [
+									CheckBox,
+									Label {
+										text : "Prevent empty entries"
+									}
+								]
+							},
+							HBox {
+								children : [
+									CheckBox,
+									Label {
+										text : "Preserve Whitespace"
+									}
+								]
+							},
+							HBox {
+								children : [
+									CheckBox,
+									Label {
+										text : "Sort as number in browser"
+									}
+								]
+							},
+							HBox {
+								children : [
+									CheckBox,
+									Label {
+										text : "Reserve text direction (RTL)"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

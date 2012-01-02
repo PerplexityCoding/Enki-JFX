@@ -1,0 +1,81 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiBrowserChangeModel {
+	VBox id ankiBrowserChangeModel {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			HBox {
+				spacing : 10,
+				children : [
+					Label {
+						text : "Old Model:",
+						minWidth : 80
+					},
+					Label {
+						text : "Japanese"
+					}
+				]
+			},
+			HBox {
+				spacing : 10,
+				children : [
+					Label {
+						text : "New Model:",
+						minWidth : 80
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					},
+					Button {
+						text : "PX",
+						minWidth : 50
+					}
+				]
+			},
+			VBox {
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					Label {
+						text : "Templates"
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Change Reading to:",
+								prefWidth : 1000
+							},
+							ChoiceBox {
+								prefWidth : 1000
+							}
+						]
+					}
+				]
+			},
+			VBox {
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					Label {
+						text : "Fields"
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Change Expression to:",
+								prefWidth : 1000
+							},
+							ChoiceBox {
+								prefWidth : 1000
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

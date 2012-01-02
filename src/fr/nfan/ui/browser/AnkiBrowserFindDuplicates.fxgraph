@@ -1,0 +1,33 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiBrowserFindDuplicates {
+	VBox id ankiBrowserFindDuplicates {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			HBox {
+				spacing : 5,
+				children : [
+					Label {
+						text : "Find Duplicates in:",
+						minWidth : 100
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					},
+					Button {
+						text : "Search",
+						minWidth : 60
+					}
+				]
+			},
+			TextArea {
+				call HBox#hgrow : "ALWAYS",
+				call VBox#vgrow : "ALWAYS"
+			}
+		]
+	}
+}

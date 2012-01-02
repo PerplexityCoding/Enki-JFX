@@ -1,0 +1,65 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiBrowserFont controlledby MainController {
+	VBox id ankiBrowserFont {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			HBox {
+				children : [
+					Label {
+						text : "Font:",
+						minWidth : 100
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Font Size:",
+						prefWidth : 100
+					},
+					TextField {
+						prefWidth : 50
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Line Size:",
+						prefWidth : 100
+					},
+					TextField {
+						prefWidth : 50
+					}
+				]
+			},
+			Separator,
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "OK",
+						prefWidth : 100
+					},
+					Button {
+						text : "Cancel",
+						prefWidth : 100,
+						onAction : controllermethod cancel
+					}
+				]
+			}
+			
+		]
+	}
+}

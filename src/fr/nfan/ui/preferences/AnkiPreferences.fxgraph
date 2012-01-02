@@ -1,0 +1,37 @@
+package fr.nfan.ui.preferences
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.preferences.*
+import fr.nfan.controller.*
+
+component AnkiPreferences controlledby MainController {
+	VBox {
+		children : [
+			TabPane {
+				call VBox#vgrow : "ALWAYS",
+				tabs : [
+					include AnkiPreferencesBasic,
+					include AnkiPreferencesNetwork,
+					include AnkiPreferencesSaving,
+					include AnkiPreferencesAdvanced	
+				]
+			},
+			Separator,
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "Save &amp; Close"
+					},
+					Button {
+						text : "Cancel",
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

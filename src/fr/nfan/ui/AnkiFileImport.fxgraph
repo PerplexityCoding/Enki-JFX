@@ -1,0 +1,222 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.common.*
+import fr.nfan.controller.*
+
+component AnkiFileImport controlledby MainController {
+	VBox id ankiFileImport {
+		call VBox#vgrow : "ALWAYS",
+		children : [
+			VBox {
+				spacing : 5,
+				children : [
+					HBox {
+						children : [
+							Label id fileTitle {
+								text : "Limbo.txt",
+								minWidth : 120
+							},
+							Button {
+								text : "Auto-detected delimiter: Tab",
+								prefWidth : 2000
+							}
+						]
+					},
+					HBox {
+						spacing : 5,
+						children : [
+							Label {
+								text : "Model:",
+								minWidth : 40
+							},
+							ChoiceBox {
+								prefWidth : 2000
+							},
+							Button {
+								text : "Px",
+								minWidth : 50
+							},
+							Label {
+								text : "Cards:",
+								minWidth : 40
+							},
+							Button {
+								text : "Forward",
+								minWidth : 80
+							}
+						]
+					}
+				]
+			},
+			Separator,
+			VBox {
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					Label {
+						text : "Field mapping"
+					},
+					HBox {
+						call VBox#vgrow : "ALWAYS",
+						children : [
+							VBox {
+								prefWidth : 120,
+								call VBox#vgrow : "ALWAYS",
+								children : [
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Label {
+												text : "Field 1 of file is:"
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Label {
+												text : "Field 2 of file is:"
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Label {
+												text : "Field 3 of file is:"
+											}
+										]
+									}
+								]
+							},
+							VBox {
+								prefWidth : 200,
+								call HBox#hgrow : "ALWAYS",
+								children : [
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Label {
+												text : "mapped to Expression"
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Label {
+												text : "mapped to Back"
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Label {
+												text : "mapped to Translation"
+											}
+										]
+									}
+								]
+							},
+							VBox {
+								prefWidth : 100,
+								children : [
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Button {
+												text : "Change",
+												minWidth : 70
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Button {
+												text : "Change",
+												minWidth : 70
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Button {
+												text : "Change",
+												minWidth : 70
+											}
+										]
+									}
+								]
+							},
+							VBox {
+								spacing : 5,
+								children : [
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Button {
+												text : "Import",
+												minWidth : 70
+											}
+										]
+									},
+									HBox {
+										call VBox#vgrow : "ALWAYS",
+										alignment : "CENTER_LEFT",
+										children : [
+											Button {
+												text : "Update",
+												minWidth : 70
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			VBox {
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					Label {
+						text : "Status"
+					},
+					TextField {
+						call VBox#vgrow : "ALWAYS",
+						minHeight : 100,
+						maxHeight : 250
+					}
+				]
+			},
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "Save &amp; Close"
+					},
+					Button {
+						text : "Cancel",
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

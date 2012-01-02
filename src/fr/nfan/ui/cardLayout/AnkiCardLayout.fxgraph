@@ -1,0 +1,59 @@
+package fr.nfan.ui.cardLayout
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.cardLayout.*
+import fr.nfan.ui.common.*
+import fr.nfan.controller.*
+
+component AnkiCardLayout controlledby MainController {
+	VBox {
+		children : [
+			SplitPane {
+				call VBox#vgrow : "ALWAYS",
+				items : [
+					VBox {
+						prefWidth : 400,
+						children : [
+							TabPane {
+								tabs : [
+									Tab {
+										text : "Card Templates",
+										closable : false,
+										content : [
+											include AnkiCardLayoutCardTemplates
+										]
+									},
+									Tab {
+										text : "Fields",
+										closable : false,
+										content : [
+											include AnkiCardLayoutFields
+										]
+									}
+								]
+							},
+							Separator,
+							HBox {
+								style : "-fx-padding: 5 5 5 5",
+								spacing : 10,
+								alignment : "CENTER_RIGHT",
+								children : [
+									Button {
+										text : "Save &amp; Close"
+									},
+									Button {
+										text : "Cancel",
+										onAction : controllermethod cancel
+									}
+								]
+							}
+						]
+					}
+					,
+					include AnkiCardLayoutView
+				]
+			}
+		]
+	}
+}

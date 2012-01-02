@@ -1,0 +1,40 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiBrowserToolBar controlledby BrowserToolBarController {
+	ToolBar {
+		items : [
+			Button {
+				text : "ADD",
+				onAction : controllermethod onAddFactClick
+			},
+			Button {
+				text : "GENERATE_CARDS",
+				onAction : controllermethod onGenerateFactClick
+			},
+			Button {
+				text : "ADD_TAGS",
+				onAction : controllermethod onAddTagsClick
+			},
+			Button {
+				text : "DELETE_TAGS",
+				onAction : controllermethod onDeleteTagsClick
+			},
+			Button {
+				text : "TOGGLE_MARK",
+				onAction : controllermethod onToogleMarkClick
+			},
+			Button {
+				text : "TOGGLE_SUSPEND",
+				onAction : controllermethod onToogleSuspendClick
+			},
+			Button {
+				text : "DELETE",
+				onAction : controllermethod onDeleteClick
+			}
+		]
+	}
+}

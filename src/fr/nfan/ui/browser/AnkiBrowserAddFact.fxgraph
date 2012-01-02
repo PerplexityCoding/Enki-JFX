@@ -1,0 +1,56 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.browser.*
+
+component AnkiBrowserAddFact {
+	VBox {
+		call VBox#vgrow : "ALWAYS",
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			HBox {
+				alignment : "CENTER_LEFT",
+				spacing : 5,
+				children : [
+					Label {
+						text : "Model:",
+						minWidth : 50
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					},
+					Button {
+						text : "Px",
+						minWidth : 50
+					},
+					Label {
+						text : "Cards:",
+						minWidth : 40
+					},
+					Button {
+						text : "Forward",
+						minWidth : 70
+					}
+				]
+			},
+			Separator,
+			include AnkiBrowserFactToolBar,
+			include AnkiBrowserViewFact,
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "Add"
+					},
+					Button {
+						text : "Close"
+					}
+				]
+			}
+		]
+	}
+}

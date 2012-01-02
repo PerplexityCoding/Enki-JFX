@@ -1,0 +1,36 @@
+package fr.nfan.ui.deckProperties
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.deckProperties.*
+import fr.nfan.ui.common.*
+import fr.nfan.controller.*
+
+component AnkiDeckProperties controlledby MainController {
+	VBox {
+		children : [
+			TabPane {
+				tabs : [
+					include AnkiDeckPropertiesBasicTab,
+					include AnkiDeckPropertiesLatexTab,
+					include AnkiDeckPropertiesAdvancedTab
+				]
+			},
+			Separator,
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "Save &amp; Close"
+					},
+					Button {
+						text : "Cancel",
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

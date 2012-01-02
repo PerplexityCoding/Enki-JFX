@@ -1,0 +1,224 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.web.*
+import fr.nfan.controller.*
+
+component AnkiMainMenu controlledby MenuController {
+	MenuBar {
+		menus : [
+			Menu {
+				text : rstring "main.menu.file" ,
+				items : [
+					MenuItem {
+						text : rstring "main.menu.file.new",
+						onAction : controllermethod onNewDeckClick
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.open"
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.open_recent"
+					} ,
+					Menu {
+						text : rstring "main.menu.file.download" ,
+						items : [
+							MenuItem {
+								text : rstring "main.menu.file.download.personal",
+								onAction : controllermethod onDownloadPersonalDeckClick
+							} ,
+							SeparatorMenuItem ,
+							MenuItem {
+								text : rstring "main.menu.file.download.shared_deck",
+								onAction : controllermethod onDownloadSharedDeck
+							} ,
+							MenuItem {
+								text : rstring "main.menu.file.download.shared_plugin"
+							}
+						]
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.imports",
+						onAction : controllermethod onImportClick
+					} ,
+					SeparatorMenuItem ,
+					MenuItem {
+						text : rstring "main.menu.file.save"
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.save_as"
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.sync"
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.export",
+						onAction : controllermethod onExportClick
+					} ,
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.file.close"
+					} ,
+					MenuItem {
+						text : rstring "main.menu.file.exit",
+						onAction : controllermethod onExitClick
+					}
+				]
+			} ,
+			Menu {
+				text : rstring "main.menu.edit",
+				items : [
+					MenuItem {
+						text : rstring "main.menu.edit.undo"
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.redo"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.edit.add_item",
+						onAction : controllermethod onAddItemClick
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.current_fact",
+						onAction : controllermethod onEditCurrentFactClick
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.card_layout",
+						onAction : controllermethod onCardLayoutClick
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.browse_items",
+						onAction : controllermethod onOpenBrowserClick
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.edit.mark_facts"
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.bury_facts"
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.suspend_cards"
+					},
+					MenuItem {
+						text : rstring "main.menu.edit.delete_cards"
+					}
+				]
+			} ,
+			Menu {
+				text : rstring "main.menu.tools",
+				items : [
+					MenuItem {
+						text : rstring "main.menu.tools.graphs",
+						onAction : controllermethod onGraphsClick
+					},
+					MenuItem {
+						text : rstring "main.menu.tools.deck_statistics"
+					},
+					MenuItem {
+						text : rstring "main.menu.tools.card_statistics"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.tools.repeat_audio"
+					},
+					SeparatorMenuItem,
+					Menu {
+						text : rstring "main.menu.tools.advanced",
+						items : [
+							MenuItem {
+								text : rstring "main.menu.tools.advanced.check_database"
+							},
+							MenuItem {
+								text : rstring "main.menu.tools.advanced.optimize_database"
+							},
+							SeparatorMenuItem,
+							MenuItem {
+								text : rstring "main.menu.tools.advanced.check_media_database"
+							},
+							MenuItem {
+								text : rstring "main.menu.tools.advanced.record_noise_profile"
+							},
+							MenuItem {
+								text : rstring "main.menu.tools.advanced.download_missing_media"
+							},
+							MenuItem {
+								text : rstring "main.menu.tools.advanced.localize_media"
+							}
+						]
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.tools.cram",
+						onAction : controllermethod onCramClick
+					}
+				]
+			} ,
+			Menu {
+				text : rstring "main.menu.settings",
+				items : [
+					MenuItem {
+						text : rstring "main.menu.settings.study_options",
+						onAction : controllermethod onStartStudy
+					},
+					MenuItem {
+						text : rstring "main.menu.settings.deck_properties",
+						onAction : controllermethod onDeckPropertiesClick
+					},
+					SeparatorMenuItem,
+					Menu {
+						text : rstring "main.menu.settings.plugins",
+						items : [
+							MenuItem {
+								text : rstring "main.menu.settings.plugins.open_folder"
+							},
+							SeparatorMenuItem,
+							Menu {
+								text : rstring "main.menu.settings.plugins.startup",
+								items : [
+									MenuItem {
+										text : rstring "main.menu.settings.plugins.startup.enable_all"
+									},
+									MenuItem {
+										text : rstring "main.menu.settings.plugins.startup.disable_all"
+									}
+								]
+							}
+						]
+					},
+					MenuItem {
+						text : rstring "main.menu.settings.preferences",
+						onAction : controllermethod onPreferencesClick
+					}
+				]
+			} ,
+			Menu {
+				text : rstring "main.menu.help",
+				items : [
+					MenuItem {
+						text : rstring "main.menu.help.Documentation"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.help.Report_Bug"
+					},
+					MenuItem {
+						text : rstring "main.menu.help.Forum"
+					},
+					MenuItem {
+						text : rstring "main.menu.help.Release_Note"
+					},
+					SeparatorMenuItem,
+					MenuItem {
+						text : rstring "main.menu.help.Donate"
+					},
+					MenuItem {
+						text : rstring "main.menu.help.About"
+					}
+				]
+			}
+		]
+	}
+}

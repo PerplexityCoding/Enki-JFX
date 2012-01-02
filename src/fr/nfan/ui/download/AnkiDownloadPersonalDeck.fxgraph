@@ -1,0 +1,39 @@
+package fr.nfan.ui.download
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiDownloadPersonalDeck controlledby MainController {
+	VBox id ankiDownloadPersonalDeck {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			Label {
+				alignment : "CENTER",
+				prefWidth : 2000,
+				text : "Download Personal Deck"
+			},
+			ListView {
+				call HBox#hgrow : "ALWAYS",
+				call VBox#vgrow : "ALWAYS"
+			},
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "OK",
+						prefWidth : 120
+					},
+					Button {
+						text : "Cancel",
+						prefWidth : 120,
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

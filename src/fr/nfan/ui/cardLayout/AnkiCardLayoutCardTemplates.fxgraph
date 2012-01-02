@@ -1,0 +1,145 @@
+package fr.nfan.ui.cardLayout
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiCardLayoutCardTemplates {
+	VBox {
+		spacing : 3,
+		style : "-fx-padding: 5 5 5 5",
+		children : [
+			Label {
+				text : "Templates used by fact:"
+			},
+			HBox {
+				children : [
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			},
+			GridPane {
+				call GridPane#vgrow : "ALWAYS",
+				prefHeight : 2000,
+				vgap : 4,
+				children : [
+					Label {
+						text : "Question",
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 0,
+						call GridPane#hgrow : "ALWAYS",
+						call GridPane#vgrow : "ALWAYS"
+					},
+					TextArea {
+						call GridPane#rowIndex : 0,
+						call GridPane#columnIndex : 1,
+						call GridPane#hgrow : "ALWAYS"
+					},
+					Button {
+						text : "Flip",
+						call GridPane#rowIndex : 1,
+						call GridPane#columnIndex : 0
+					},
+					Label {
+						text : "Answer",
+						call GridPane#rowIndex : 2,
+						call GridPane#columnIndex : 0,
+						call GridPane#vgrow : "ALWAYS"
+					},
+					TextArea {
+						call GridPane#rowIndex : 2,
+						call GridPane#columnIndex : 1
+					},
+					Label { 
+						text : "Alignment",
+						call GridPane#rowIndex : 3,
+						call GridPane#columnIndex : 0
+					},
+					ChoiceBox {
+						call VBox#vgrow : "ALWAYS",
+						call GridPane#rowIndex : 3,
+						call GridPane#columnIndex : 1,
+						prefWidth : 2000
+					},
+					Label {
+						text : "Background",
+						call GridPane#rowIndex : 4,
+						call GridPane#columnIndex : 0
+					},
+					ChoiceBox {
+						call GridPane#rowIndex : 4,
+						call GridPane#columnIndex : 1,
+						prefWidth : 2000
+					}
+				],
+				/* 
+				rowConstraints : [
+					RowConstraints,
+					RowConstraints {
+						prefHeight : 15
+					},
+					RowConstraints {
+						prefHeight : 5
+					},
+					RowConstraints{
+						prefHeight : 15
+					},
+					RowConstraints
+				], */
+				columnConstraints : [
+					ColumnConstraints {
+						minWidth : 70,
+						maxWidth : 70,
+						halignment : "CENTER"
+					}
+				]
+			},
+			/* 
+			HBox {
+				children : [
+					VBox {
+						minWidth : 70,
+						spacing : 30,
+						alignment : "CENTER",
+						children : [
+							Label {
+								text : "Question"
+							},
+							Button {
+								text : "Flip"
+							},
+							Label { 
+								text : "Answer"
+							}
+						]
+					},
+					VBox {
+						children : [
+							TextArea,
+							TextArea
+						]
+					}
+				]
+			},*/
+			ChoiceBox {
+				prefWidth : 2000
+			},
+			HBox {
+				children : [
+					CheckBox,
+					Label { 
+						text : "Hide the question when showing answer"
+					}
+				]
+			},
+			HBox {
+				children : [
+					CheckBox,
+					Label { 
+						text : "Allow the answer to be blank"
+					}
+				]
+			}
+		]
+	}
+}

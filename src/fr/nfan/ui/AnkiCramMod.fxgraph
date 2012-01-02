@@ -1,0 +1,74 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.common.*
+import fr.nfan.controller.*
+
+component AnkiCramMod controlledby MainController {
+	define ToggleGroup id tg
+	VBox id AnkiCramMod {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			Label {
+				text : "Tags to cram"
+			},
+			TextField {
+				minHeight : 20
+			},
+			VBox {
+				call VBox#vgrow : "ALWAYS",
+				children : [
+					Label {
+						text : "Review Mode"
+					},
+					VBox {
+						call VBox#vgrow : "ALWAYS",
+						style : "-fx-padding: 5 5 5 5",
+						spacing : 5,
+						children : [
+							RadioButton {
+								text : "Show oldest modified first",
+								prefHeight : 100,
+								toggleGroup : idref tg,
+								selected : true
+							},
+							RadioButton {
+								text : "Show in order added",
+								prefHeight : 100,
+								toggleGroup : idref tg
+							},
+							RadioButton {
+								text : "Show in random order",
+								prefHeight : 100,
+								toggleGroup : idref tg
+							}
+						]
+					}
+				]
+			},
+			Separator,
+			HBox{
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				call HBox#hgrow : "ALWAYS",
+				children : [
+					Button {
+						text : "OK",
+						prefWidth : 150
+					},
+					Button {
+						text : "Cancel",
+						prefWidth : 150,
+						onAction : controllermethod cancel
+					},
+					Button {
+						text : "Help",
+						prefWidth : 150
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,106 @@
+package fr.nfan.ui.deckProperties
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiDeckPropertiesBasicTab {
+	Tab {
+		text : "Basic",
+		closable : false,
+		content : [
+			VBox id basicTabVbox {
+				children : [
+					Label {
+						text : "Synchronization",
+						style : "-fx-font-weight: bold"
+					},
+					HBox {
+						children : [
+							CheckBox,
+							Label {
+								text : "Synchronize this deck with AnkiWeb"
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "Media URL",
+								minWidth : 90
+							},
+							TextField {
+								call HBox#hgrow : "ALWAYS"
+							}
+						]
+					},
+					Label {
+						text : "Models",
+						style : "-fx-font-weight: bold"
+					},
+					HBox {
+						spacing : 5,
+						children : [
+							ListView {
+								call HBox#hgrow : "ALWAYS"
+							},
+							VBox {
+								spacing : 5,
+								children : [
+									Button {
+										minWidth : 70,
+										text : "Add"
+									},
+									Button {
+										minWidth : 70,
+										text : "Edit"
+									},
+									Button {
+										minWidth : 70,
+										text : "Delete"
+									}
+								]
+							}
+						]
+					},
+					Label {
+						text : "Priorities",
+						style : "-fx-font-weight: bold"
+					},
+					HBox {
+						children : [
+							Label {
+								text : "Very high priority",
+								minWidth : 120
+							},
+							TextField {
+								call HBox#hgrow : "ALWAYS"
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "high priority",
+								minWidth : 120
+							},
+							TextField {
+								call HBox#hgrow : "ALWAYS"
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "low priority",
+								minWidth : 120
+							},
+							TextField {
+								call HBox#hgrow : "ALWAYS"
+							}
+						]
+					}
+				]
+			}	
+		]
+	}
+}

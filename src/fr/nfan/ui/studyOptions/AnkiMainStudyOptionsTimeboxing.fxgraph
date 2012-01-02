@@ -1,0 +1,130 @@
+package fr.nfan.ui.studyOptions
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiMainStudyOptionsTimeboxing {
+	Tab {
+		text : "Timeboxing",
+		closable : false,
+		content : [
+			VBox id studyOptionsBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 3,
+				children : [
+					HBox {
+						children : [
+							Label {
+								text : "Cards/session:",
+								style : "-fx-font-weight: bold",
+								prefWidth : 200
+							}, 
+							Label {
+								text : "0",
+								prefWidth : 60
+							},
+							Label {
+								text : "0"
+							}
+						]
+					},
+					Separator,
+					HBox {
+						children : [
+							Label {
+								text : "Cards/day:",
+								style : "-fx-font-weight: bold",
+								prefWidth : 200
+							}, 
+							Label {
+								text : "107",
+								prefWidth : 60
+							},
+							Label {
+								text : "90"
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "Time/day:",
+								style : "-fx-font-weight: bold",
+								prefWidth : 200
+							}, 
+							Label {
+								text : "22,4m",
+								prefWidth : 60
+							},
+							Label {
+								text : "16,3m"
+							}
+						]
+					},
+					Separator,
+					HBox {
+						children : [
+							Label {
+								text : "Reviews due:",
+								style : "-fx-font-weight: bold",
+								prefWidth : 240
+							}, 
+							Label {
+								text : "0"
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "New today:",
+								style : "-fx-font-weight: bold",
+								prefWidth : 240
+							}, 
+							Label {
+								text : "0"
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "New total:",
+								style : "-fx-font-weight: bold",
+								prefWidth : 240
+							}, 
+							Label {
+								text : "4910"
+							}
+						]
+					},
+					Separator,
+					HBox {
+						children : [
+							Label {
+								text : "Session limit (minutes):",
+								prefWidth : 200,
+								style : "-fx-font-weight: bold"
+							}, 
+							TextField {
+								prefWidth : 60
+							}
+						]
+					},
+					HBox {
+						children : [
+							Label {
+								text : "Session limit (questions):",
+								prefWidth : 200,
+								style : "-fx-font-weight: bold"
+							}, 
+							TextField {
+								prefWidth : 60
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

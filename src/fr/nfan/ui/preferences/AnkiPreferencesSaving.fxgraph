@@ -1,0 +1,93 @@
+package fr.nfan.ui.preferences
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiPreferencesSaving {
+	Tab {
+		text : "Saving",
+		closable : false,
+		content : [
+			VBox id ankiPreferencesSaving {
+				style : "-fx-padding: 5 10 10 5",
+				spacing : 5,
+				children : [
+					Label {
+						text : "Autosaving"
+					},
+					HBox {
+						spacing : 15,
+						alignment : "CENTER_LEFT",
+						children : [
+							CheckBox {
+								text : "Save after answering",
+								prefWidth : 160
+							},
+							TextField {
+								prefWidth : 50,
+								minWidth : 20
+							},
+							Label {
+								text : "cards",
+								minWidth : 30
+							}
+						]
+					},
+					HBox {
+						spacing : 15,
+						alignment : "CENTER_LEFT",
+						children : [
+							CheckBox {
+								text : "Save after adding",
+								prefWidth : 160
+							},
+							TextField {
+								prefWidth : 50,
+								minWidth : 20
+							},
+							Label {
+								text : "cards",
+								minWidth : 30
+							}
+						]
+					},
+					CheckBox {
+						text : "Save after closing"
+					},
+					Separator,
+					Label {
+						text : "Backups"
+					},
+					VBox {
+						children : [
+							Label {
+								text : "Decks are backed up when they are opened or synchronized, and 
+										only if they have been modified since the last backup.",
+								wrapText : true
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						alignment : "CENTER_LEFT",
+						children : [
+							Label {
+								text : "Keep"
+							},
+							TextField {
+								prefWidth : 50,
+								minWidth : 20
+							},
+							Label {
+								text : "backups of each deck"
+							}
+						]
+					},
+					Hyperlink {
+						text : "Open backup folder"
+					}
+				]
+			}
+		]
+	}
+}

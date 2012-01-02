@@ -1,0 +1,23 @@
+package fr.nfan.ui.graphs
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import javafx.scene.chart.*
+
+component AnkiGraphs {
+	VBox {
+		children : [
+			HBox {
+				children : [
+					Label {
+						text : "Due",
+						minWidth : 50
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,77 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiBrowserReschedule controlledby MainController {
+	define javafx.scene.control.ToggleGroup id tg
+	VBox {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			RadioButton id rescheduleAsNew {
+				text : "Reschedule as new cards",
+				selected : true,
+				toggleGroup : idref tg
+			},
+			RadioButton {
+				text : "Reschedule with initial interval in range:",
+				toggleGroup : idref tg
+			},
+			VBox {
+				style : "-fx-padding: 5 15 5 5",
+				disable : bind rescheduleAsNew#selected,
+				children : [
+					HBox {
+						spacing : 5,
+						children : [
+							Label {
+								text : "Min",
+								prefWidth : 40
+							},
+							TextField {
+								prefWidth : 40
+							},
+							Label {
+								text : "days"
+							}
+						]
+					},
+					HBox {
+						spacing : 5,
+						children : [
+							Label {
+								text : "Max",
+								prefWidth : 40
+							},
+							TextField {
+								prefWidth : 40
+							},
+							Label {
+								text : "days"
+							}
+						]
+					}
+				]
+			},
+			Separator,
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "OK",
+						prefWidth : 100
+					},
+					Button {
+						text : "Cancel",
+						prefWidth : 100,
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+	}
+}

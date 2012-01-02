@@ -1,0 +1,220 @@
+package fr.nfan.ui.deckProperties
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiDeckPropertiesAdvancedTab {
+	Tab {
+		text : "Advanced",
+		closable : false,
+		content : [
+			VBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 4,
+				children : [
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Button 1 delay",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "minutes"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Button 1 multiplier",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "%"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Mature bonus",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "days"
+							}
+						]
+					},
+					Separator,
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Initial button 2 interval",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "~"
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "days"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Initial button 3 interval",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "~"
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "days"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Initial button 4 interval",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "~"
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "days"
+							}
+						]
+					},
+					Separator,
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Leech threshold",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "failures"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Shift midnight by",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "hours"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Sibling delay (new cards)",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "minutes"
+							}
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Sibling delay (reviews)",
+								prefWidth : 140
+							},
+							TextField {
+								prefWidth : 50
+							},
+							Label {
+								text : "%"
+							}
+						]
+					},
+					Separator,
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Show failed cards early",
+								prefWidth : 140
+							},
+							CheckBox
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Suspend leeches",
+								prefWidth : 140
+							},
+							CheckBox
+						]
+					},
+					HBox {
+						spacing : 10,
+						children : [
+							Label {
+								text : "Per-day scheduling",
+								prefWidth : 140
+							},
+							CheckBox
+						]
+					}
+				]
+			}
+		]
+	}
+}

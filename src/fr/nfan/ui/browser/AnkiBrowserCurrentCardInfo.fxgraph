@@ -1,0 +1,27 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiBrowserCurrentCardInfo {
+	BorderPane id currentCardIndoBoxOuter {
+		prefWidth : 200,
+		minWidth : 160,
+		top : [
+			Label id currentCardIndoBoxTitle {
+				prefWidth : 200,
+				text : "Current Card"
+			}
+		],
+		center : [
+			VBox id currentCardIndoBox {
+				children : [
+					Label {
+						text : "Infos"
+					}
+				]
+			}
+		]
+	}
+	
+}

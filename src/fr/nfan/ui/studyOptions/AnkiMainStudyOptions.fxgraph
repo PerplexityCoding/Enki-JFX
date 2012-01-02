@@ -1,0 +1,45 @@
+package fr.nfan.ui.studyOptions
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.studyOptions.*
+import fr.nfan.controller.*
+
+component AnkiMainStudyOptions controlledby MainController {
+	VBox id ankiStudyOptions {
+		maxWidth : 300,
+		minWidth : 300,
+		visible : false,
+		children : [
+			HBox id studyOptionsTitle {
+				children : [
+					Label {
+						text : "Study Options"
+					}
+				]
+			},
+			TabPane {
+				tabs : [
+					include AnkiMainStudyOptionsNewCards,
+					include AnkiMainStudyOptionsReviews,
+					include AnkiMainStudyOptionsTimeboxing
+				]
+			},
+			HBox {
+				spacing : 10,
+				style : "-fx-padding: 5 5 5 5",
+				children : [
+					Button {
+						text : "Review",
+						prefWidth : 220,
+						onAction : controllermethod onStartStudy
+					},
+					Button {
+						text : "Help",
+						prefWidth : 60
+					}
+				]
+			}
+		]
+	}
+}

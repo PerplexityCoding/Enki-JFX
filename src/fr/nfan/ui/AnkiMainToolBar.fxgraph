@@ -1,0 +1,49 @@
+package fr.nfan.ui
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiMainToolBar controlledby MainToolBarController {
+	ToolBar {
+		items : [
+			Button {
+				text : "ADD",
+				onAction : controllermethod onAddFactClick
+			},
+			Button {
+				text : "EDIT",
+				onAction : controllermethod onEditFactClick
+			},
+			Button {
+				text : "LAYOUT",
+				onAction : controllermethod onCardLayoutClick
+			},
+			Button {
+				text : "BROWSE",
+				onAction : controllermethod onBrowserClick
+			},
+			Button {
+				text : "STUDY",
+				onAction : controllermethod onStudyOptionsClick
+			},
+			Button {
+				text : "STATS",
+				onAction : controllermethod onStatsClick
+			},
+			Button {
+				text : "MARK",
+				onAction : controllermethod onMarkCardClick
+			},
+			Button {
+				text : "AUDIO_PLAY",
+				onAction : controllermethod onPlayAudioClick
+			},
+			Button {
+				text : "CLOSE",
+				onAction : controllermethod onCloseClick
+			}
+			
+		]
+	}
+}

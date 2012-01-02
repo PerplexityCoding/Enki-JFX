@@ -1,0 +1,9 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiBrowserCardsGrid {
+	TableView {
+	}
+}

@@ -1,0 +1,68 @@
+package fr.nfan.ui.browser
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.controller.*
+
+component AnkiBrowserFindAndReplace controlledby MainController {
+	VBox id ankiBrowserFindAndReplace {
+		style : "-fx-padding: 5 5 5 5",
+		spacing : 5,
+		children : [
+			HBox {
+				children : [
+					Label {
+						text : "Find:",
+						prefWidth : 100
+					},
+					TextField {
+						call HBox#hgrow : "ALWAYS"
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "In:",
+						minWidth : 100
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			},
+			HBox {
+				children : [
+					Label {
+						text : "Replace With:",
+						prefWidth : 100
+					},
+					TextField {
+						call HBox#hgrow : "ALWAYS"
+					}
+				]
+			},
+			CheckBox {
+				text : "Treat input as regular expression"
+			},
+			Separator,
+			HBox {
+				style : "-fx-padding: 5 5 5 5",
+				spacing : 10,
+				alignment : "CENTER_RIGHT",
+				children : [
+					Button {
+						text : "OK",
+						prefWidth : 120
+					},
+					Button {
+						text : "Cancel",
+						prefWidth : 120,
+						onAction : controllermethod cancel
+					}
+				]
+			}
+		]
+		 
+	}
+}

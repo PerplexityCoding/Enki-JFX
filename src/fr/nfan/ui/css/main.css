@@ -1,0 +1,162 @@
+
+.root {
+	-fx-background-color: white;
+	-fx-base : lightgray;
+	-fx-control-inner-background: white;
+}
+
+#ankiMainDeckPane {
+	-fx-padding: 20 50 0 50;
+}
+
+#decksGridPane {
+	/* -fx-alignment: center-left; */
+	-fx-hgap: 10;
+	-fx-vgap: 5;
+	-fx-padding: 10 10 10 0;
+}
+
+#browserSearchBar {
+	-fx-hgap: 5;
+	-fx-padding: 5 5 2 5;
+	-fx-spacing: 4;
+	-fx-alignment: center;
+}
+
+#currentCardIndoBoxOuter {
+	-fx-padding: 5 5 5 5;
+}
+
+#currentCardIndoBox {
+	-fx-border-style: solid;
+	-fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-padding: 5 5 5 5;
+}
+
+#currentCardIndoBoxOuter #currentCardIndoBoxTitle {
+	-fx-font-weight: bold;
+	-fx-border-style: solid;
+	-fx-border-width: 1;
+	-fx-border-color: black;
+	-fx-padding: 0 0 0 0;
+	-fx-alignment: center;
+	-fx-translate-y: 1;
+}
+
+#viewFactGridBox {
+	-fx-padding: 5 5 5 5;
+	-fx-spacing: 5;
+}
+
+#green {
+	-fx-background-color: green;
+}
+
+#basicTabVbox {
+	-fx-spacing: 5;
+	-fx-padding: 5 5 5 5;
+}
+
+#hboxSaveButton {
+	-fx-padding: 5 5 5 5;
+	-fx-background-color: white;
+}
+
+/* 
+#decksGridPane .button {
+	-fx-alignment: center;
+}
+
+#decksGridPane #deckName{
+}
+*/
+
+#ankiMainDeck {
+	-fx-border-style: solid;
+	-fx-border-width: 1;
+	-fx-border-color: black;
+}
+
+#ankiMainDeck #deckTitle {
+	-fx-font-size: 20;
+}
+
+#studyOptionsTitle {
+	-fx-font-size: 20;
+}
+ 
+#studyOptionsBox {
+	-fx-border-style: dotted;
+	-fx-border-width: 1;
+	-fx-border-color: gray;
+}
+
+#ankiFileImport {
+	-fx-padding : 5 5 5 5;
+}
+
+#ankiFileImport > VBox {
+	-fx-padding : 5 5 5 5;
+}
+
+#ankiFileImport #fileTitle {
+	-fx-font-weight: bold;
+}
+
+#ankiFileImport > VBox > Label {
+	-fx-font-weight: bold;
+}
+
+#AnkiCramMod Label {
+	-fx-font-weight: bold;
+}
+
+#ankiFileExport Label {
+	-fx-font-weight: bold;
+}
+
+#ankiPreferencesBasic Label {
+	-fx-font-weight: bold;
+}
+
+#ankiPreferencesNetwork > Label {
+	-fx-font-weight: bold;
+}
+
+#ankiPreferencesSaving > Label {
+	-fx-font-weight: bold;
+}
+
+#ankiBrowserFindAndReplace > HBox > Label {
+	-fx-font-weight: bold;
+}
+
+#ankiBrowserChangeModel > HBox > Label {
+	-fx-font-weight: bold;
+}
+
+#ankiBrowserChangeModel > VBox {
+	-fx-padding : 5 5 5 5;
+	-fx-border-style: dotted;
+	-fx-border-width: 1;
+	-fx-border-color: gray;
+}
+
+#ankiBrowserChangeModel VBox > Label {
+	-fx-font-weight: bold;
+}
+
+#ankiDownloadPersonalDeck Label {
+	-fx-font-size: 20;
+	-fx-font-weight: bold;
+	-fx-text-alignment: center;
+}
+
+#ankiMainStudyResponse TextArea {
+	-fx-cursor: default;
+}
+
+#ankiMainStudyQuestion TextArea {
+	-fx-cursor: default;
+}

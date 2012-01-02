@@ -1,0 +1,52 @@
+package fr.nfan.ui.preferences
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+
+component AnkiPreferencesBasic {
+	Tab {
+		text : "Basic",
+		closable : false,
+		content : [
+			VBox id ankiPreferencesBasic {
+				style : "-fx-padding: 5 10 10 5",
+				spacing : 5,
+				children : [
+					Label {
+						text : "Language"
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					},
+					Label {
+						text : "Reviewing"
+					},
+					CheckBox {
+						text : "Show divider between question and answer"
+					},
+					CheckBox {
+						text : "Put space between question and answer"
+					},
+					CheckBox {
+						text : "Show next time before answer"
+					},
+					CheckBox {
+						text : "Show due count and progress during review"
+					},
+					CheckBox {
+						text : "Prevent edits until answer shown"
+					},
+					CheckBox {
+						text : "Automatically play audio"
+					},
+					Label {
+						text : "Media"
+					},
+					ChoiceBox {
+						prefWidth : 2000
+					}
+				]
+			}
+		]
+	}
+}
