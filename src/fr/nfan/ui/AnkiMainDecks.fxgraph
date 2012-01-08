@@ -45,40 +45,7 @@ component AnkiMainDecks controlledby MainController {
 						call GridPane#rowIndex : 0,
 						call GridPane#columnIndex : 2,
 						style : "-fx-font-weight: bold"
-					},
-					Label id deckName  {
-						text : "RTK 3 KANji Poweerrrr",
-						call GridPane#rowIndex : 1,
-						call GridPane#columnIndex : 0,
-						call GridPane#hgrow : "ALWAYS"
-					},
-					Label  {
-						text : "36",
-						call GridPane#rowIndex : 1,
-						call GridPane#columnIndex : 1
-					},
-					Label {
-						text : "15",
-						call GridPane#rowIndex : 1,
-						call GridPane#columnIndex : 2
-					},
-					HBox {
-						call GridPane#rowIndex : 1,
-						call GridPane#columnIndex : 3,
-						spacing : 5,
-						children : [
-							Button {
-								text : "Open",
-								onAction : controllermethod onOpenDeck
-							},
-							Button {
-								text : "Hide"
-							},
-							Button {
-								text : "Delete"
-							}
-						]
-					}					
+					}				
 				],
 				columnConstraints : [
 					ColumnConstraints {
