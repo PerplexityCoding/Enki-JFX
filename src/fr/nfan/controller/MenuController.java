@@ -3,20 +3,20 @@ package fr.nfan.controller;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import fr.nfan.AnkiAddFact;
-import fr.nfan.AnkiBrowser;
-import fr.nfan.AnkiCardLayout;
-import fr.nfan.AnkiCramMod;
-import fr.nfan.AnkiDeckProperties;
-import fr.nfan.AnkiDownloadPersonalDeck;
-import fr.nfan.AnkiDownloadSharedDeck;
-import fr.nfan.AnkiFileExport;
-import fr.nfan.AnkiFileImport;
-import fr.nfan.AnkiGraphs;
 import fr.nfan.AnkiMainFx;
-import fr.nfan.AnkiNewDeck;
 import fr.nfan.AnkiMainFx.State;
-import fr.nfan.AnkiPreferences;
+import fr.nfan.components.AnkiAddFact;
+import fr.nfan.components.AnkiBrowser;
+import fr.nfan.components.AnkiCardLayout;
+import fr.nfan.components.AnkiCramMod;
+import fr.nfan.components.AnkiDeckProperties;
+import fr.nfan.components.AnkiDownloadPersonalDeck;
+import fr.nfan.components.AnkiDownloadSharedDeck;
+import fr.nfan.components.AnkiFileExport;
+import fr.nfan.components.AnkiFileImport;
+import fr.nfan.components.AnkiGraphs;
+import fr.nfan.components.AnkiNewDeck;
+import fr.nfan.components.AnkiPreferences;
 
 public class MenuController {
 

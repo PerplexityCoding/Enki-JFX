@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,18 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiAddFact extends Stage {
+public class AnkiFileImport extends Stage {
 	
-	public AnkiAddFact() {
+	public AnkiFileImport() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserAddFact.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiFileImport.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 500, 400);
+			Scene scene = new Scene(ankiMainRoot, 530, 480);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Add Fact - Anki JFX");
+			setTitle("Anki JFX - Import");
 			setScene(scene);
 			sizeToScene();
 			show();

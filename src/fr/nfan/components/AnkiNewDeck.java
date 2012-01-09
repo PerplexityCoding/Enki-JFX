@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,18 +8,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiPreferences extends Stage {
+public class AnkiNewDeck extends Stage {
+
 	
-	public AnkiPreferences() {
+	public AnkiNewDeck() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/preferences/AnkiPreferences.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiNewDeck.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 300, 360);
+			Scene scene = new Scene(ankiMainRoot, 190, 90);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Preferences - Anki JFX");
+			setTitle("New Deck - Anki JFX");
 			setScene(scene);
 			sizeToScene();
 			show();

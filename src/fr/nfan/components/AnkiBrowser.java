@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,19 +8,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiBrowserAddTags extends Stage {
+public class AnkiBrowser extends Stage {
 	
-	public AnkiBrowserAddTags() {
+	public AnkiBrowser(String deckName) {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserAddTags.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowser.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 200, 90);
+			Scene scene = new Scene(ankiMainRoot, 600, 600);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Add Tags - Anki JFX");
+			setTitle("Anki JFX - Cards Browser");
 			setScene(scene);
 			sizeToScene();
 			show();

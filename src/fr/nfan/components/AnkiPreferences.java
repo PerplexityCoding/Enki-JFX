@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,19 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiBrowserReschedule extends Stage {
+public class AnkiPreferences extends Stage {
 	
-	public AnkiBrowserReschedule() {
-		
+	public AnkiPreferences() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserReschedule.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/preferences/AnkiPreferences.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 250, 145);
+			Scene scene = new Scene(ankiMainRoot, 300, 360);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Reschedule - Anki JFX");
+			setTitle("Preferences - Anki JFX");
 			setScene(scene);
 			sizeToScene();
 			show();
@@ -29,8 +28,5 @@ public class AnkiBrowserReschedule extends Stage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 	}
-	
 }

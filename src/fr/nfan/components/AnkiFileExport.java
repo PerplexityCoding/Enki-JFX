@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,18 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiGraphs extends Stage {
+public class AnkiFileExport extends Stage {
 	
-	public AnkiGraphs() {
+	public AnkiFileExport() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/graphs/AnkiGraphs.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiFileExport.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 700, 500);
+			Scene scene = new Scene(ankiMainRoot, 335, 140);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Anki JFX - Graphs");
+			setTitle("Anki JFX - File Export");
 			setScene(scene);
 			sizeToScene();
 			show();

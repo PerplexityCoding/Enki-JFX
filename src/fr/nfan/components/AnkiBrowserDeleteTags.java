@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,19 +8,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiBrowserFindAndReplace extends Stage {
+public class AnkiBrowserDeleteTags extends Stage {
 	
-	public AnkiBrowserFindAndReplace() {
+	public AnkiBrowserDeleteTags() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserFindAndReplace.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserDeleteTags.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 300, 150);
+			Scene scene = new Scene(ankiMainRoot, 200, 90);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Find And Replace - Anki JFX");
+			setTitle("Delete Tags - Anki JFX");
 			setScene(scene);
 			sizeToScene();
 			show();

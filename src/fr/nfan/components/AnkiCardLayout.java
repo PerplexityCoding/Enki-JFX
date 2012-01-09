@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,19 +8,18 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiNewDeck extends Stage {
-
+public class AnkiCardLayout extends Stage {
 	
-	public AnkiNewDeck() {
+	public AnkiCardLayout() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiNewDeck.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/cardLayout/AnkiCardLayout.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 190, 90);
+			Scene scene = new Scene(ankiMainRoot, 700, 500);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("New Deck - Anki JFX");
+			setTitle("Anki JFX - Card Layout");
 			setScene(scene);
 			sizeToScene();
 			show();

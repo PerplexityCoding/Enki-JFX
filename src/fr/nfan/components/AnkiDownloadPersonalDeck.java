@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,18 +8,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiCardLayout extends Stage {
+public class AnkiDownloadPersonalDeck extends Stage {
 	
-	public AnkiCardLayout() {
+	public AnkiDownloadPersonalDeck() {
+		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/cardLayout/AnkiCardLayout.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/download/AnkiDownloadPersonalDeck.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 700, 500);
+			Scene scene = new Scene(ankiMainRoot, 450, 300);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Anki JFX - Card Layout");
+			setTitle("Download Personal Deck - Anki JFX");
 			setScene(scene);
 			sizeToScene();
 			show();
@@ -28,5 +29,8 @@ public class AnkiCardLayout extends Stage {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
 	}
+	
 }

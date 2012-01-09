@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import fr.nfan.AnkiMainFx;
 import fr.nfan.AnkiMainFx.State;
+import fr.nfan.components.AnkiSelectiveStudy;
 
 public class MainController {
 
@@ -77,5 +78,8 @@ public class MainController {
 		stage.close();
 	}
 	
-	
+	@FXML
+	public void changeSelectiveStudy(ActionEvent event) {
+		new AnkiSelectiveStudy();
+	}
 }

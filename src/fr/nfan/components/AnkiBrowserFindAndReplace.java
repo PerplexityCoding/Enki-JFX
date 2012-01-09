@@ -1,4 +1,4 @@
-package fr.nfan;
+package fr.nfan.components;
 
 import java.io.IOException;
 import java.util.ResourceBundle;
@@ -8,19 +8,19 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class AnkiBrowserChangeModel extends Stage {
+public class AnkiBrowserFindAndReplace extends Stage {
 	
-	public AnkiBrowserChangeModel() {
+	public AnkiBrowserFindAndReplace() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserChangeModel.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserFindAndReplace.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
-			Scene scene = new Scene(ankiMainRoot, 300, 250);
+			Scene scene = new Scene(ankiMainRoot, 300, 150);
 			
 			scene.getStylesheets().add("fr/nfan/ui/css/main.css");
 			
-			setTitle("Change Model - Anki JFX");
+			setTitle("Find And Replace - Anki JFX");
 			setScene(scene);
 			sizeToScene();
 			show();

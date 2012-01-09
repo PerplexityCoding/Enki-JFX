@@ -2,16 +2,16 @@ package fr.nfan.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import fr.nfan.AnkiAddFact;
-import fr.nfan.AnkiBrowserAddTags;
-import fr.nfan.AnkiBrowserChangeModel;
-import fr.nfan.AnkiBrowserDeleteTags;
-import fr.nfan.AnkiBrowserFindAndReplace;
-import fr.nfan.AnkiBrowserFindDuplicates;
-import fr.nfan.AnkiBrowserFont;
-import fr.nfan.AnkiBrowserGenerateCards;
-import fr.nfan.AnkiBrowserReschedule;
-import fr.nfan.AnkiCramMod;
+import fr.nfan.components.AnkiAddFact;
+import fr.nfan.components.AnkiBrowserAddTags;
+import fr.nfan.components.AnkiBrowserChangeModel;
+import fr.nfan.components.AnkiBrowserDeleteTags;
+import fr.nfan.components.AnkiBrowserFindAndReplace;
+import fr.nfan.components.AnkiBrowserFindDuplicates;
+import fr.nfan.components.AnkiBrowserFont;
+import fr.nfan.components.AnkiBrowserGenerateCards;
+import fr.nfan.components.AnkiBrowserReschedule;
+import fr.nfan.components.AnkiCramMod;
 
 public class BrowserMenuController {
 

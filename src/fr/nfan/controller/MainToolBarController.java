@@ -2,12 +2,12 @@ package fr.nfan.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import fr.nfan.AnkiAddFact;
-import fr.nfan.AnkiBrowser;
-import fr.nfan.AnkiCardLayout;
-import fr.nfan.AnkiGraphs;
 import fr.nfan.AnkiMainFx;
 import fr.nfan.AnkiMainFx.State;
+import fr.nfan.components.AnkiAddFact;
+import fr.nfan.components.AnkiBrowser;
+import fr.nfan.components.AnkiCardLayout;
+import fr.nfan.components.AnkiGraphs;
 
 public class MainToolBarController {
 

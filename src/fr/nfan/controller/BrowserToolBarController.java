@@ -1,9 +1,9 @@
 package fr.nfan.controller;
 
-import fr.nfan.AnkiAddFact;
-import fr.nfan.AnkiBrowserAddTags;
-import fr.nfan.AnkiBrowserDeleteTags;
-import fr.nfan.AnkiBrowserGenerateCards;
+import fr.nfan.components.AnkiAddFact;
+import fr.nfan.components.AnkiBrowserAddTags;
+import fr.nfan.components.AnkiBrowserDeleteTags;
+import fr.nfan.components.AnkiBrowserGenerateCards;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
