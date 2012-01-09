@@ -10,10 +10,12 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
@@ -46,7 +48,6 @@ public class AnkiMainFx extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
-		
 		try {
 			root = FXMLLoader.load(getClass().getResource("ui/AnkiMain.fxml"),
 					ResourceBundle.getBundle("Anki", Locale.ENGLISH));
@@ -63,7 +64,7 @@ public class AnkiMainFx extends Application {
 			mainState = State.DECKS_LIST;
 			
 			ankiMainDeck = (VBox) root.lookup("#ankiMainDeck");
-			controller = new MainController();
+			controller = new MainController(this);
 			
 			loadDecks();
 			
@@ -89,8 +90,6 @@ public class AnkiMainFx extends Application {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}  
-		
-		
 	}
 	
 	public void loadDecks() {
@@ -102,7 +101,7 @@ public class AnkiMainFx extends Application {
 		int i = 1;
 		for (Entry<String, String> ankiDeck : listAnkiDeck.entrySet()) {
 			
-			Deck deck = DeckManager.getDeck(ankiDeck.getValue(), false, false, DeckManager.REQUESTING_ACTIVITY_DECKPICKER, true);
+			Deck deck = DeckManager.getDeck(ankiDeck.getValue(), false, false, DeckManager.REQUESTING_ACTIVITY_DECKPICKER, false);
 			if (deck == null) {
 				// Log error
 				continue;
@@ -122,11 +121,14 @@ public class AnkiMainFx extends Application {
 			
 			Button openButton = new Button("Open");
 			
+			final Deck[] arrayTrick = new Deck[] {deck};
 			openButton.setOnAction(new EventHandler<ActionEvent>() {
+				
+				private Deck deck = arrayTrick[0];
 				
 				@Override
 				public void handle(ActionEvent event) {
-					controller.onOpenDeck(event);
+					controller.onOpenDeck(event, deck);
 				}
 			});
 			
@@ -138,6 +140,18 @@ public class AnkiMainFx extends Application {
 			
 			i++;
 		}
+		
+	}
+	
+	public void setStudyOptionsValues(Deck deck) {
+		
+		Node ankiStudyOptions = root.lookup("#ankiStudyOptions");
+		
+		TextField newCardsPerDay = (TextField) ankiStudyOptions.lookup("#newCardsPerDay");
+		newCardsPerDay.setText(String.valueOf(deck.getNewCardsPerDay()));
+		
+		TextField maxFailedCard = (TextField) ankiStudyOptions.lookup("#maxFailedCard");
+		maxFailedCard.setText(String.valueOf(deck.getFailedCardMax()));
 		
 	}
 	
