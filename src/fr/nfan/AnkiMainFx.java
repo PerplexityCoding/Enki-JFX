@@ -1,10 +1,17 @@
 package fr.nfan;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -16,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -23,9 +31,13 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import com.ichi2.anki.Utils;
 import com.ichi2.anki.model.Deck;
+import com.ichi2.anki.model.Stats;
 import com.ichi2.anki.service.DeckManager;
+import com.ichi2.utils.MathUtils;
 
+import fr.nfan.components.AnkiSelectiveStudy;
 import fr.nfan.controller.MainController;
 
 public class AnkiMainFx extends Application {
@@ -86,6 +98,7 @@ public class AnkiMainFx extends Application {
 			//new AnkiBrowserReschedule();
 			//new AnkiBrowserChangeModel();
 			//new AnkiDownloadPersonalDeck();
+			//new AnkiSelectiveStudy();
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -157,9 +170,73 @@ public class AnkiMainFx extends Application {
 		ChoiceBox<String> showNewCardOrderReviews = (ChoiceBox<String>) ankiStudyOptions.lookup("#showNewCardOrderReviews");
 		showNewCardOrderReviews.getSelectionModel().select(deck.getNewCardSpacing());
 		
+		ChoiceBox<String> reviewsCardOrder = (ChoiceBox<String>) ankiStudyOptions.lookup("#reviewsCardOrder");
+		reviewsCardOrder.getSelectionModel().select(deck.getRevCardOrder());
+		
+		ChoiceBox<String> reviewsFailedOrder = (ChoiceBox<String>) ankiStudyOptions.lookup("#reviewsFailedOrder");
+		reviewsFailedOrder.getSelectionModel().select(deck.getFailedDelayedCount());
+		
+		Button changeNewStudyLimit = (Button) ankiStudyOptions.lookup("#changeNewStudyLimit");
+		Button changeReviewStudyLimit = (Button) ankiStudyOptions.lookup("#changeReviewStudyLimit");
+		
+		Set<Button> changeStudyLimit = new HashSet<Button>();
+		changeStudyLimit.add(changeNewStudyLimit);
+		changeStudyLimit.add(changeReviewStudyLimit);
+		
+		for (Button button : changeStudyLimit) {
+			
+			final Deck[] arrayTrick = new Deck[] {deck};
+			button.setOnAction(
+				new EventHandler<ActionEvent>() {
+					public void handle(ActionEvent event) {
+						controller.changeSelectiveStudy(event, arrayTrick[0]);
+					};
+				}
+			);
+			
+		}
+		
 		TextField maxFailedCard = (TextField) ankiStudyOptions.lookup("#maxFailedCard");
 		maxFailedCard.setText(String.valueOf(deck.getFailedCardMax()));
+		
+		setStudyOptionsTimeboxingValues(deck);
 	}
+	
+	private String getDailyTime(Stats stats) {
+		Double dailyTime = MathUtils.round(stats.getReviewTime() / 60, 2);
+		String result = String.valueOf(dailyTime);
+		if (dailyTime.doubleValue() != 0d) {
+			result += "m";
+		}
+		
+		return result;
+	}
+	
+	public void setStudyOptionsTimeboxingValues(Deck deck) {
+		Node ankiStudyOptions = root.lookup("#ankiStudyOptions");
+		
+		Stats todayStats = Stats.dailyStats(deck);
+		Stats yesterdayStats = Stats.dailyStats(deck, 1);
+		Stats globalStats = Stats.globalStats(deck);
+		
+		//((Label) ankiStudyOptions.lookup("#cardsDonePreviousSession")).setText();
+		//((Label) ankiStudyOptions.lookup("#cardsDoneThisSession"))
+		
+		((Label) ankiStudyOptions.lookup("#cardsDoneYesterday")).setText(String.valueOf(yesterdayStats.getReps()));
+		((Label) ankiStudyOptions.lookup("#cardsDoneToday")).setText(String.valueOf(todayStats.getReps()));
+		
+		((Label) ankiStudyOptions.lookup("#timeSpendYesterday")).setText(getDailyTime(yesterdayStats));
+		((Label) ankiStudyOptions.lookup("#timeSpendToday")).setText(getDailyTime(todayStats));
+		
+		((Label) ankiStudyOptions.lookup("#reviewDueToday")).setText(String.valueOf(deck.getRevCount()));
+		((Label) ankiStudyOptions.lookup("#newDueToday")).setText(String.valueOf(deck.getNewCountToday()));
+		((Label) ankiStudyOptions.lookup("#newTotal")).setText(String.valueOf(deck.getNewCount(false)));
+		
+		((TextField) ankiStudyOptions.lookup("#sessionLimitMinutes")).setText(String.valueOf(deck.getSessionTimeLimit() / 60));
+		((TextField) ankiStudyOptions.lookup("#sessionLimitQuestion")).setText(String.valueOf(deck.getSessionRepLimit()));
+	}
+	
+	
 	
 	public static State getMainState() {
 		return mainState;

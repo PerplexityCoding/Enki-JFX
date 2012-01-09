@@ -3,8 +3,9 @@ package fr.nfan.ui.studyOptions
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import javafx.collections.*
+import fr.nfan.controller.*
 
-component AnkiMainStudyOptionsReviews {
+component AnkiMainStudyOptionsReviews controlledby MainController {
 	Tab {
 		text : "Reviews",
 		closable : false,
@@ -30,7 +31,7 @@ component AnkiMainStudyOptionsReviews {
 						text : "Display Order:",
 						style : "-fx-font-weight: bold"
 					},
-					ChoiceBox {
+					ChoiceBox id reviewsCardOrder {
 						items : FXCollections createdby observableArrayList {
 							String("Review cards from largest interval"), 
 							String("Review cards from smallest interval"),
@@ -39,7 +40,7 @@ component AnkiMainStudyOptionsReviews {
 						},
 						prefWidth : 2000
 					},
-					ChoiceBox {
+					ChoiceBox id reviewsFailedOrder {
 						prefWidth : 2000,
 						items : FXCollections createdby observableArrayList {
 							String("Show failed cards soon"), 
@@ -60,7 +61,7 @@ component AnkiMainStudyOptionsReviews {
 								text : "Show Chosen Categories",
 								prefWidth : 225
 							},
-							Button {
+							Button id changeReviewStudyLimit {
 								text : "Change"
 							}
 						]

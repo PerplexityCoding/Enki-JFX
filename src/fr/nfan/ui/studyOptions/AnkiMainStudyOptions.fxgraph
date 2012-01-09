@@ -7,8 +7,8 @@ import fr.nfan.controller.*
 
 component AnkiMainStudyOptions controlledby MainController {
 	VBox id ankiStudyOptions {
-		maxWidth : 300,
-		minWidth : 300,
+		maxWidth : 350,
+		minWidth : 350,
 		visible : false,
 		children : [
 			HBox id studyOptionsTitle {

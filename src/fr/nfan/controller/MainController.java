@@ -79,7 +79,8 @@ public class MainController {
 	}
 	
 	@FXML
-	public void changeSelectiveStudy(ActionEvent event) {
-		new AnkiSelectiveStudy();
+	public void changeSelectiveStudy(ActionEvent event, Deck deck) {
+		new AnkiSelectiveStudy(deck);
 	}
+
 }

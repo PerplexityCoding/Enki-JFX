@@ -3,8 +3,9 @@ package fr.nfan.ui.studyOptions
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import javafx.collections.*
+import fr.nfan.controller.*
 
-component AnkiMainStudyOptionsNewCards {
+component AnkiMainStudyOptionsNewCards controlledby MainController {
 	Tab {
 		text : "New Cards",
 		closable : false,
@@ -30,7 +31,7 @@ component AnkiMainStudyOptionsNewCards {
 						text : "Display Order:",
 						style : "-fx-font-weight: bold"
 					},
-					ChoiceBox {
+					ChoiceBox id showNewCardOrder {
 						items : FXCollections createdby observableArrayList {
 							String("Show new cards in random order"), 
 							String("Show new cards in order added"),
@@ -38,7 +39,7 @@ component AnkiMainStudyOptionsNewCards {
 						},
 						prefWidth : 2000
 					} ,
-					ChoiceBox {
+					ChoiceBox id showNewCardOrderReviews {
 						items : FXCollections createdby observableArrayList {
 							String("Sprend new cards out through reviews"), 
 							String("Show new cards after all other cards"),
@@ -56,7 +57,7 @@ component AnkiMainStudyOptionsNewCards {
 								text : "Show Chosen Categories" ,
 								prefWidth : 225
 							} ,
-							Button {
+							Button id changeNewStudyLimit {
 								text : "Change"
 							}
 						]

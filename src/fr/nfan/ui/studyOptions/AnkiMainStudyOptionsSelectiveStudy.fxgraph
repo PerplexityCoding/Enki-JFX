@@ -1,0 +1,78 @@
+package fr.nfan.ui.studyOptions
+
+import javafx.scene.layout.*
+import javafx.scene.control.*
+import fr.nfan.ui.studyOptions.*
+import fr.nfan.controller.*
+
+component AnkiMainStudyOptionsSelectiveStudy controlledby SelectiveStudyController {
+	define javafx.scene.control.ToggleGroup id activeSettingTg
+	VBox id ankiMainStudyOptionsSelectiveStudy  {
+		spacing : 10,
+		style : "-fx-padding: 10 10 10 10",
+		children : [
+			CheckBox id listTagActiveCheck {
+				text : "Show only cards with any of these tags:",
+				onAction : controllermethod onlistTagActiveCheck
+			},
+			ListView id listTagActive {
+				call VBox#vgrow : "ALWAYS",
+				disable : true
+			},
+			CheckBox id listTagInactiveCheck {
+				text : "Hide cards with any of these tags:",
+				onAction : controllermethod onlistTagInactiveCheck
+			},
+			ListView id listTagInactive {
+				call VBox#vgrow : "ALWAYS",
+				disable : true
+			},
+			HBox {
+				children : [
+					VBox {
+						spacing : 10,
+						call HBox#hgrow : "ALWAYS",
+						children : [
+							Label {
+								text : "Change settings for:"
+							},
+							RadioButton id newCardSetting {
+								text :  "New cards",
+								toggleGroup : idref activeSettingTg
+							},
+							RadioButton id reviewSetting {
+								text : "Reviews",
+								toggleGroup : idref activeSettingTg
+							},
+							RadioButton id bothSetting {
+								text : "Both",
+								toggleGroup : idref activeSettingTg,
+								selected : true
+							}
+						]
+					},
+					Separator,
+					VBox {
+						spacing : 10,
+						style : "-fx-padding: 20 0 0 0",
+						children : [
+							Button {
+								text : "OK",
+								prefWidth : 100
+							},
+							Button {
+								text : "Cancel",
+								prefWidth : 100,
+								onAction : controllermethod onCancelClick
+							},
+							Button {
+								text : "Help",
+								prefWidth : 100
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}
