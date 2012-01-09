@@ -2,6 +2,7 @@ package fr.nfan.ui.browser
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiBrowserFindDuplicates {
 	VBox id ankiBrowserFindDuplicates {
@@ -16,7 +17,12 @@ component AnkiBrowserFindDuplicates {
 						minWidth : 100
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Heisig Number"),
+							String("Frequency"), 
+							String("Expression")
+						}
 					},
 					Button {
 						text : "Search",

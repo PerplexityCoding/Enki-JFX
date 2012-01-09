@@ -2,6 +2,7 @@ package fr.nfan.ui.studyOptions
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiMainStudyOptionsNewCards {
 	Tab {
@@ -19,7 +20,7 @@ component AnkiMainStudyOptionsNewCards {
 								style : "-fx-font-weight: bold",
 								prefWidth : 290
 							},
-							TextField {
+							TextField id newCardsPerDay {
 								minWidth : 40,
 								maxWidth : 40
 							}
@@ -30,9 +31,19 @@ component AnkiMainStudyOptionsNewCards {
 						style : "-fx-font-weight: bold"
 					},
 					ChoiceBox {
+						items : FXCollections createdby observableArrayList {
+							String("Show new cards in random order"), 
+							String("Show new cards in order added"),
+							String("Show new cards in reverse order added")
+						},
 						prefWidth : 2000
 					} ,
 					ChoiceBox {
+						items : FXCollections createdby observableArrayList {
+							String("Sprend new cards out through reviews"), 
+							String("Show new cards after all other cards"),
+							String("Show new cards before reviews")
+						},
 						prefWidth : 2000
 					},
 					Label {

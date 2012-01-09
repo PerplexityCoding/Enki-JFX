@@ -2,6 +2,7 @@ package fr.nfan.ui.cardLayout
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiCardLayoutFields {
 	VBox {
@@ -58,7 +59,11 @@ component AnkiCardLayoutFields {
 						maxWidth : 60
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Arial"),
+							String("Comics")
+						}
 					}
 				]
 			},
@@ -92,7 +97,11 @@ component AnkiCardLayoutFields {
 						maxWidth : 60
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Black"),
+							String("White")
+						}
 					}
 				]
 			},

@@ -3,6 +3,7 @@ package fr.nfan.ui.browser
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import fr.nfan.controller.*
+import javafx.collections.*
 
 component AnkiBrowserFindAndReplace controlledby MainController {
 	VBox id ankiBrowserFindAndReplace {
@@ -27,7 +28,12 @@ component AnkiBrowserFindAndReplace controlledby MainController {
 						minWidth : 100
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("All Fields"),
+							String("Heisig Number"), 
+							String("Expression")
+						}
 					}
 				]
 			},

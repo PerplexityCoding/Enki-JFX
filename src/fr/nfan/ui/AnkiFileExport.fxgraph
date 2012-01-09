@@ -2,6 +2,7 @@ package fr.nfan.ui
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 import fr.nfan.controller.*
 
 component AnkiFileExport controlledby MainController {
@@ -16,6 +17,12 @@ component AnkiFileExport controlledby MainController {
 						minWidth : 100
 					},
 					ChoiceBox {
+						items : FXCollections createdby observableArrayList {
+							String("Anki Deck (*.anki)"), 
+							String("Packaged Anki Deck (*.zip)"),
+							String("Cards in tab-separated text file (*.txt)"),
+							String("Facts in tab-separated text file (*.txt)")
+						},
 						prefWidth : 2000
 					}
 				]

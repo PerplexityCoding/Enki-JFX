@@ -3,6 +3,7 @@ package fr.nfan.ui.graphs
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import javafx.scene.chart.*
+import javafx.collections.*
 
 component AnkiGraphs {
 	VBox {
@@ -14,7 +15,18 @@ component AnkiGraphs {
 						minWidth : 50
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("7 days"),
+							String("1 month"),
+							String("3 months"),
+							String("6 months"),
+							String("1 year"),
+							String("2 years"),
+							String("3 years"),
+							String("4 years"),
+							String("5 years")
+						}
 					}
 				]
 			}

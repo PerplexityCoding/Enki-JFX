@@ -2,6 +2,7 @@ package fr.nfan.ui.cardLayout
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiCardLayoutCardTemplates {
 	VBox {
@@ -14,7 +15,11 @@ component AnkiCardLayoutCardTemplates {
 			HBox {
 				children : [
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Writing"),
+							String("Reading")
+						}
 					}
 				]
 			},
@@ -59,7 +64,12 @@ component AnkiCardLayoutCardTemplates {
 						call VBox#vgrow : "ALWAYS",
 						call GridPane#rowIndex : 3,
 						call GridPane#columnIndex : 1,
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Center"),
+							String("Left"),
+							String("Right")
+						}
 					},
 					Label {
 						text : "Background",
@@ -69,7 +79,11 @@ component AnkiCardLayoutCardTemplates {
 					ChoiceBox {
 						call GridPane#rowIndex : 4,
 						call GridPane#columnIndex : 1,
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Black"),
+							String("White")
+						}
 					}
 				],
 				/* 
@@ -122,7 +136,12 @@ component AnkiCardLayoutCardTemplates {
 				]
 			},*/
 			ChoiceBox {
-				prefWidth : 2000
+				prefWidth : 2000,
+				items : FXCollections createdby observableArrayList {
+					String("Don't ask me to type in the answer"),
+					Separator,
+					String("Compare with field 'Expression'")
+				}
 			},
 			HBox {
 				children : [

@@ -2,6 +2,7 @@ package fr.nfan.ui.studyOptions
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiMainStudyOptionsReviews {
 	Tab {
@@ -19,7 +20,7 @@ component AnkiMainStudyOptionsReviews {
 								style : "-fx-font-weight: bold",
 								prefWidth : 290
 							},
-							TextField {
+							TextField id maxFailedCard {
 								minWidth : 40,
 								maxWidth : 40
 							}
@@ -30,10 +31,24 @@ component AnkiMainStudyOptionsReviews {
 						style : "-fx-font-weight: bold"
 					},
 					ChoiceBox {
+						items : FXCollections createdby observableArrayList {
+							String("Review cards from largest interval"), 
+							String("Review cards from smallest interval"),
+							String("Review cards in order due"),
+							String("Review cards in random order")
+						},
 						prefWidth : 2000
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Show failed cards soon"), 
+							String("Show failed cards at end"),
+							String("Show failed cards in 10 minutes"),
+							String("Show failed cards in 8 hours"),
+							String("Show failed cards in 3 days"),
+							String("Custom failed cards handling")
+						}
 					},
 					Label {
 						text : "Selective Study:",

@@ -2,6 +2,7 @@ package fr.nfan.ui
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 import fr.nfan.ui.common.*
 import fr.nfan.controller.*
 
@@ -32,6 +33,11 @@ component AnkiFileImport controlledby MainController {
 								minWidth : 40
 							},
 							ChoiceBox {
+								items : FXCollections createdby observableArrayList {
+									String("Japanese"),
+									String("Arc Academy"), 
+									String("Other")
+								},
 								prefWidth : 2000
 							},
 							Button {

@@ -2,6 +2,7 @@ package fr.nfan.ui.preferences
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiPreferencesBasic {
 	Tab {
@@ -16,7 +17,11 @@ component AnkiPreferencesBasic {
 						text : "Language"
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("English"),
+							String("French")
+						}
 					},
 					Label {
 						text : "Reviewing"
@@ -43,7 +48,12 @@ component AnkiPreferencesBasic {
 						text : "Media"
 					},
 					ChoiceBox {
-						prefWidth : 2000
+						prefWidth : 2000,
+						items : FXCollections createdby observableArrayList {
+							String("Keep media next to deck"),
+							String("Keep media in Dropbox"),
+							String("Keep media in custom folder")
+						}
 					}
 				]
 			}

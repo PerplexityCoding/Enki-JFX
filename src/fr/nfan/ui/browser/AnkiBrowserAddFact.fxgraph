@@ -3,6 +3,8 @@ package fr.nfan.ui.browser
 import javafx.scene.layout.*
 import javafx.scene.control.*
 import fr.nfan.ui.browser.*
+import fr.nfan.utils.*
+import javafx.collections.*
 
 component AnkiBrowserAddFact {
 	VBox {
@@ -19,7 +21,13 @@ component AnkiBrowserAddFact {
 						minWidth : 50
 					},
 					ChoiceBox {
+						items : FXCollections createdby observableArrayList {
+							String("Japanese"),
+							String("Arc Academy"), 
+							String("Other")
+						},
 						prefWidth : 2000
+						//call FXMLUtils#select : "ALWAYS"
 					},
 					Button {
 						text : "Px",

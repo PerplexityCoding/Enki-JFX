@@ -16,11 +16,30 @@ component AnkiBrowserSearchBar {
 			Label {
 				text : "Filter:"
 			},
-			ChoiceBox id browserFilter,
+			ChoiceBox id browserFilter {
+				items : FXCollections createdby observableArrayList {
+					String("Show All Cards"),
+					String("Marked"), 
+					String("Suspended"),
+					String("Due"),
+					String("Leech"),
+					String("No Fact Tags"),
+					Separator,
+					String("Heisig Model"),
+					Separator,
+					String("Heisig Template"),
+					Separator,
+					String("Heisig Tags")
+				}
+			},
 			Label {
 				text : "Sort:"
 			},
-			ChoiceBox id sortFilter
+			ChoiceBox id sortFilter {
+				items : FXCollections createdby observableArrayList {
+					String("Fields")
+				}
+			}
 		]
 	}
 }

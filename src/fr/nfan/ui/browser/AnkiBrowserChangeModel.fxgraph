@@ -2,6 +2,7 @@ package fr.nfan.ui.browser
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import javafx.collections.*
 
 component AnkiBrowserChangeModel {
 	VBox id ankiBrowserChangeModel {
@@ -28,6 +29,11 @@ component AnkiBrowserChangeModel {
 						minWidth : 80
 					},
 					ChoiceBox {
+						items : FXCollections createdby observableArrayList {
+							String("Japanese"),
+							String("Arc Academy"), 
+							String("Other")
+						},
 						prefWidth : 2000
 					},
 					Button {
@@ -50,6 +56,11 @@ component AnkiBrowserChangeModel {
 								prefWidth : 1000
 							},
 							ChoiceBox {
+								items : FXCollections createdby observableArrayList {
+									String("Heisig"),
+									String("JKeyword"), 
+									String("Writing")
+								},
 								prefWidth : 1000
 							}
 						]
@@ -70,7 +81,12 @@ component AnkiBrowserChangeModel {
 								prefWidth : 1000
 							},
 							ChoiceBox {
-								prefWidth : 1000
+								prefWidth : 1000,
+								items : FXCollections createdby observableArrayList {
+									String("Heisig"),
+									String("JKeyword"), 
+									String("Writing")
+								}
 							}
 						]
 					}
