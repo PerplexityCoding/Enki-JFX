@@ -12,7 +12,7 @@ public class AnkiDeckProperties extends Stage {
 
 	public AnkiDeckProperties() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/deckProperties/AnkiDeckProperties.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/deckProperties/AnkiDeckProperties.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 335, 385);

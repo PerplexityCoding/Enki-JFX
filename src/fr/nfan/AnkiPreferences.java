@@ -12,7 +12,7 @@ public class AnkiPreferences extends Stage {
 	
 	public AnkiPreferences() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/preferences/AnkiPreferences.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/preferences/AnkiPreferences.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 300, 360);

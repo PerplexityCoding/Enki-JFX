@@ -12,7 +12,7 @@ public class AnkiGraphs extends Stage {
 	
 	public AnkiGraphs() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/graphs/AnkiGraphs.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/graphs/AnkiGraphs.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 700, 500);

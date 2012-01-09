@@ -13,7 +13,7 @@ public class AnkiBrowserGenerateCards extends Stage {
 	public AnkiBrowserGenerateCards() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/browser/AnkiBrowserGenerateCards.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserGenerateCards.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 300, 250);

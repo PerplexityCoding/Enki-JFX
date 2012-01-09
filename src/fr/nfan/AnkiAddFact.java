@@ -12,7 +12,7 @@ public class AnkiAddFact extends Stage {
 	
 	public AnkiAddFact() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/browser/AnkiBrowserAddFact.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserAddFact.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 500, 400);

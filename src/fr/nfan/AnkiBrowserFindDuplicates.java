@@ -13,7 +13,7 @@ public class AnkiBrowserFindDuplicates extends Stage {
 	public AnkiBrowserFindDuplicates() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/browser/AnkiBrowserFindDuplicates.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserFindDuplicates.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 400, 300);

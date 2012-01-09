@@ -13,7 +13,7 @@ public class AnkiBrowserFindAndReplace extends Stage {
 	public AnkiBrowserFindAndReplace() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/browser/AnkiBrowserFindAndReplace.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserFindAndReplace.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 300, 150);

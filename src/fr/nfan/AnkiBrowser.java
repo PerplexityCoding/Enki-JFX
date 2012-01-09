@@ -13,7 +13,7 @@ public class AnkiBrowser extends Stage {
 	public AnkiBrowser(String deckName) {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/browser/AnkiBrowser.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowser.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 600, 600);

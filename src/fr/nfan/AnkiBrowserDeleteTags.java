@@ -13,7 +13,7 @@ public class AnkiBrowserDeleteTags extends Stage {
 	public AnkiBrowserDeleteTags() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/browser/AnkiBrowserDeleteTags.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/browser/AnkiBrowserDeleteTags.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 200, 90);

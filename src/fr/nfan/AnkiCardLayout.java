@@ -12,7 +12,7 @@ public class AnkiCardLayout extends Stage {
 	
 	public AnkiCardLayout() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/cardLayout/AnkiCardLayout.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/cardLayout/AnkiCardLayout.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 700, 500);

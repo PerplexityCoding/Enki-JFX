@@ -12,7 +12,7 @@ public class AnkiDownloadSharedDeck extends Stage {
 
 	public AnkiDownloadSharedDeck() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/download/AnkiDownloadSharedDeck.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/download/AnkiDownloadSharedDeck.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 700, 500);

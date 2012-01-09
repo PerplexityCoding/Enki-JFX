@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
@@ -49,7 +50,7 @@ public class AnkiMainFx extends Application {
 	public void start(Stage primaryStage) {
 		
 		try {
-			root = FXMLLoader.load(getClass().getResource("ui/AnkiMain.fxml"),
+			root = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiMain.fxml"),
 					ResourceBundle.getBundle("Anki", Locale.ENGLISH));
 			
 			Scene scene = new Scene(root, 660, 400);
@@ -150,9 +151,14 @@ public class AnkiMainFx extends Application {
 		TextField newCardsPerDay = (TextField) ankiStudyOptions.lookup("#newCardsPerDay");
 		newCardsPerDay.setText(String.valueOf(deck.getNewCardsPerDay()));
 		
+		ChoiceBox<String> showNewCardOrder = (ChoiceBox<String>) ankiStudyOptions.lookup("#showNewCardOrder");
+		showNewCardOrder.getSelectionModel().select(deck.getNewCardOrder());
+		
+		ChoiceBox<String> showNewCardOrderReviews = (ChoiceBox<String>) ankiStudyOptions.lookup("#showNewCardOrderReviews");
+		showNewCardOrderReviews.getSelectionModel().select(deck.getNewCardSpacing());
+		
 		TextField maxFailedCard = (TextField) ankiStudyOptions.lookup("#maxFailedCard");
 		maxFailedCard.setText(String.valueOf(deck.getFailedCardMax()));
-		
 	}
 	
 	public static State getMainState() {

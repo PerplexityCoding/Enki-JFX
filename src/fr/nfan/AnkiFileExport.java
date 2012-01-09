@@ -12,7 +12,7 @@ public class AnkiFileExport extends Stage {
 	
 	public AnkiFileExport() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/AnkiFileExport.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiFileExport.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 335, 140);

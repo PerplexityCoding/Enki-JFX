@@ -13,7 +13,7 @@ public class AnkiDownloadPersonalDeck extends Stage {
 	public AnkiDownloadPersonalDeck() {
 		
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/download/AnkiDownloadPersonalDeck.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/download/AnkiDownloadPersonalDeck.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 450, 300);

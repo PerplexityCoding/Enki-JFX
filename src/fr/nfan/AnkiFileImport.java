@@ -12,7 +12,7 @@ public class AnkiFileImport extends Stage {
 	
 	public AnkiFileImport() {
 		try {
-			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("ui/AnkiFileImport.fxml"),
+			Parent ankiMainRoot = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiFileImport.fxml"),
 				ResourceBundle.getBundle("Anki"));
 			
 			Scene scene = new Scene(ankiMainRoot, 530, 480);
