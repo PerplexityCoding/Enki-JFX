@@ -2,6 +2,7 @@ package fr.nfan.ui.preferences
 
 import javafx.scene.layout.*
 import javafx.scene.control.*
+import fr.nfan.components.custom.AnkiTextField
 
 component AnkiPreferencesSaving {
 	Tab {
@@ -19,13 +20,14 @@ component AnkiPreferencesSaving {
 						spacing : 15,
 						alignment : "CENTER_LEFT",
 						children : [
-							CheckBox {
+							CheckBox id saveAfterAnswering {
 								text : "Save after answering",
 								prefWidth : 160
 							},
-							TextField {
+							AnkiTextField id saveAfterAnsweringCards {
 								prefWidth : 50,
-								minWidth : 20
+								minWidth : 20,
+								enabled : bind saveAfterAnswering#selected
 							},
 							Label {
 								text : "cards",
@@ -37,13 +39,14 @@ component AnkiPreferencesSaving {
 						spacing : 15,
 						alignment : "CENTER_LEFT",
 						children : [
-							CheckBox {
+							CheckBox id saveAfterAdding {
 								text : "Save after adding",
 								prefWidth : 160
 							},
-							TextField {
+							AnkiTextField id saveAfterAddingCards {
 								prefWidth : 50,
-								minWidth : 20
+								minWidth : 20,
+								enabled : bind saveAfterAdding#selected
 							},
 							Label {
 								text : "cards",
@@ -51,7 +54,7 @@ component AnkiPreferencesSaving {
 							}
 						]
 					},
-					CheckBox {
+					CheckBox id saveAfterClosing {
 						text : "Save after closing"
 					},
 					Separator,
@@ -74,7 +77,7 @@ component AnkiPreferencesSaving {
 							Label {
 								text : "Keep"
 							},
-							TextField {
+							TextField id howManyBackups {
 								prefWidth : 50,
 								minWidth : 20
 							},

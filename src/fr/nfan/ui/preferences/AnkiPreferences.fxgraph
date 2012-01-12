@@ -24,7 +24,8 @@ component AnkiPreferences controlledby MainController {
 				alignment : "CENTER_RIGHT",
 				children : [
 					Button {
-						text : "Save &amp; Close"
+						text : "Save &amp; Close",
+						onAction : controllermethod savePreferences
 					},
 					Button {
 						text : "Cancel",

@@ -1,14 +1,9 @@
 package fr.nfan;
 
 import java.io.IOException;
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
-import java.util.TimeZone;
 import java.util.Map.Entry;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -23,7 +18,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -31,14 +25,14 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import com.ichi2.anki.Utils;
 import com.ichi2.anki.model.Deck;
 import com.ichi2.anki.model.Stats;
 import com.ichi2.anki.service.DeckManager;
 import com.ichi2.utils.MathUtils;
 
-import fr.nfan.components.AnkiSelectiveStudy;
+import fr.nfan.components.AnkiPreferences;
 import fr.nfan.controller.MainController;
+import fr.nfan.services.AnkiPreferencesService;
 
 public class AnkiMainFx extends Application {
 	
@@ -50,20 +44,35 @@ public class AnkiMainFx extends Application {
 		STUDY_RESPONSE
 	}
 
+	private static AnkiMainFx instance = null;
+	
 	private static Parent root;
-	
 	private VBox ankiMainDeck;
-	
 	private static State mainState;
-	
 	private MainController controller;
 	
+	public static AnkiMainFx getInstance() {
+		return instance;
+	}
+	
+	public AnkiMainFx() throws Exception {
+		if (instance != null) {
+			throw new Exception("this method should only called once; call getInstance to get references");
+		}
+		instance = this;
+	}
+	
+	/*
+	 * Components
+	 */
+	private AnkiPreferences preferences;
+
 	@Override
 	public void start(Stage primaryStage) {
 		
 		try {
 			root = FXMLLoader.load(getClass().getResource("/fr/nfan/ui/AnkiMain.fxml"),
-					ResourceBundle.getBundle("Anki", Locale.ENGLISH));
+					ResourceBundle.getBundle("strings/anki", Locale.ENGLISH));
 			
 			Scene scene = new Scene(root, 660, 400);
 			
@@ -77,7 +86,9 @@ public class AnkiMainFx extends Application {
 			mainState = State.DECKS_LIST;
 			
 			ankiMainDeck = (VBox) root.lookup("#ankiMainDeck");
-			controller = new MainController(this);
+			controller = new MainController();
+			
+			AnkiPreferencesService.initProperties();
 			
 			loadDecks();
 			
@@ -265,12 +276,19 @@ public class AnkiMainFx extends Application {
 		
 	}
 	
+	public AnkiPreferences getPreferences() {
+		return preferences;
+	}
+
+	public void setPreferences(AnkiPreferences preferences) {
+		this.preferences = preferences;
+	}
+	
 	public static void changeState(State state) {
 		changeState(mainState, false);
 		changeState(state, true);
 		mainState = state;
 	}
-	
 	
 	public static void main(String[] args) {
 		launch(args);

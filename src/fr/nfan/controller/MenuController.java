@@ -20,6 +20,12 @@ import fr.nfan.components.AnkiPreferences;
 
 public class MenuController {
 
+	private AnkiMainFx mainFx;
+	
+	public MenuController() {
+		this.mainFx = AnkiMainFx.getInstance();
+	}
+	
 	@FXML
 	public void onOpenBrowserClick(ActionEvent event) {
 		new AnkiBrowser("");
@@ -76,7 +82,7 @@ public class MenuController {
 	
 	@FXML
 	public void onPreferencesClick(ActionEvent event) {
-		new AnkiPreferences();
+		mainFx.setPreferences(new AnkiPreferences());
 	}
 	
 	@FXML
@@ -86,7 +92,7 @@ public class MenuController {
 	
 	@FXML
 	public void onEditCurrentFactClick(ActionEvent event) {
-		AnkiMainFx.changeState(State.EDIT_FACT);
+		mainFx.changeState(State.EDIT_FACT);
 	}
 	
 	@FXML
@@ -101,6 +107,6 @@ public class MenuController {
 	
 	@FXML
 	public void onStartStudy(ActionEvent event) {
-		AnkiMainFx.changeState(State.STUDY_OPTIONS);
+		mainFx.changeState(State.STUDY_OPTIONS);
 	}
 }

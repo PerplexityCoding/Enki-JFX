@@ -25,7 +25,7 @@ component AnkiPreferencesNetwork {
 								text : "Username",
 								prefWidth : 70
 							},
-							TextField {
+							TextField id ankiWebUsername {
 								call HBox#hgrow : "ALWAYS"
 							}
 						]
@@ -37,18 +37,18 @@ component AnkiPreferencesNetwork {
 								text : "Password",
 								prefWidth : 70
 							},
-							TextField {
+							PasswordField id ankiWebPassword {
 								call HBox#hgrow : "ALWAYS"
 							}
 						]
 					},
-					CheckBox {
+					CheckBox id syncDeckOpenClose {
 						text : "Sync on deck open/close"
 					},
-					CheckBox {
+					CheckBox id syncProgramOpenClose {
 						text : "Sync on program open/close"
 					},
-					CheckBox {
+					CheckBox id disableSyncWhenMoved {
 						text : "Disable sync when deck moved"
 					},
 					Separator,
@@ -63,14 +63,14 @@ component AnkiPreferencesNetwork {
 								text : "Host",
 								prefWidth : 30
 							},
-							TextField {
+							TextField id proxyHost {
 								prefWidth : 50
 							},
 							Label {
 								text : "Port",
 								prefWidth : 30
 							},
-							TextField {
+							TextField id proxyPort {
 								prefWidth : 50
 							}
 						]
@@ -82,7 +82,7 @@ component AnkiPreferencesNetwork {
 								text : "Username",
 								prefWidth : 70
 							},
-							TextField
+							TextField id proxyUsername
 						]
 					},
 					HBox {
@@ -92,7 +92,7 @@ component AnkiPreferencesNetwork {
 								text : "Password",
 								prefWidth : 70
 							},
-							TextField
+							PasswordField id proxyPassword
 						]
 					}
 				]

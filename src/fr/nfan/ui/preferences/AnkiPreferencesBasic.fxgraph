@@ -16,7 +16,7 @@ component AnkiPreferencesBasic {
 					Label {
 						text : "Language"
 					},
-					ChoiceBox {
+					ChoiceBox id language {
 						prefWidth : 2000,
 						items : FXCollections createdby observableArrayList {
 							String("English"),
@@ -26,28 +26,28 @@ component AnkiPreferencesBasic {
 					Label {
 						text : "Reviewing"
 					},
-					CheckBox {
+					CheckBox id showDividerQA {
 						text : "Show divider between question and answer"
 					},
-					CheckBox {
+					CheckBox id putSpaceQA {
 						text : "Put space between question and answer"
 					},
-					CheckBox {
+					CheckBox id showNextTime {
 						text : "Show next time before answer"
 					},
-					CheckBox {
+					CheckBox id showDueCount {
 						text : "Show due count and progress during review"
 					},
-					CheckBox {
+					CheckBox id preventEdits {
 						text : "Prevent edits until answer shown"
 					},
-					CheckBox {
+					CheckBox id automaticalPlayAudio {
 						text : "Automatically play audio"
 					},
 					Label {
 						text : "Media"
 					},
-					ChoiceBox {
+					ChoiceBox id mediaWhere {
 						prefWidth : 2000,
 						items : FXCollections createdby observableArrayList {
 							String("Keep media next to deck"),

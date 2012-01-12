@@ -17,7 +17,7 @@ public class AnkiJFXComponent extends Stage {
 	public AnkiJFXComponent(String uiPath, String title, int width, int height) {
 		try {
 			root = FXMLLoader.load(getClass().getResource(uiRootPath + uiPath),
-				ResourceBundle.getBundle("Anki"));
+				ResourceBundle.getBundle("strings/anki"));
 			
 			Scene scene = new Scene(root, width, height);
 			

@@ -1,5 +1,7 @@
 package fr.nfan.controller;
 
+import java.util.prefs.Preferences;
+
 import com.ichi2.anki.model.Deck;
 
 import javafx.event.ActionEvent;
@@ -9,43 +11,40 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import fr.nfan.AnkiMainFx;
 import fr.nfan.AnkiMainFx.State;
+import fr.nfan.components.AnkiPreferences;
 import fr.nfan.components.AnkiSelectiveStudy;
 
 public class MainController {
 
 	private AnkiMainFx mainFx;
 	
-	public MainController(AnkiMainFx mainFx) {
-		this.mainFx = mainFx;
-	}
-	
 	public MainController() {
+		this.mainFx = AnkiMainFx.getInstance();
 	}
 	
 	@FXML
 	public void onOpenDeck(ActionEvent event, Deck deck) {
 		mainFx.setStudyOptionsValues(deck);
-		
-		AnkiMainFx.changeState(State.STUDY_OPTIONS);
+		mainFx.changeState(State.STUDY_OPTIONS);
 	}
 	
 	@FXML
 	public void onEditCart(ActionEvent event) {
-		AnkiMainFx.changeState(State.EDIT_FACT);
+		mainFx.changeState(State.EDIT_FACT);
 	}
 	
 	@FXML
 	public void onStartStudy(ActionEvent event) {
-		AnkiMainFx.changeState(State.STUDY);
+		mainFx.changeState(State.STUDY);
 	}
 	
 	@FXML
 	public void onShowResponse(ActionEvent event) {
-		AnkiMainFx.changeState(State.STUDY_RESPONSE);
+		mainFx.changeState(State.STUDY_RESPONSE);
 	}
 	
 	private void onResponse(ActionEvent event, int indice) {
-		AnkiMainFx.changeState(State.STUDY);
+		mainFx.changeState(State.STUDY);
 	}
 	
 	@FXML
@@ -81,6 +80,12 @@ public class MainController {
 	@FXML
 	public void changeSelectiveStudy(ActionEvent event, Deck deck) {
 		new AnkiSelectiveStudy(deck);
+	}
+	
+	public void savePreferences(ActionEvent event) {
+		AnkiPreferences prefs = mainFx.getPreferences();
+		prefs.storePropertes();
+		prefs.close();
 	}
 
 }

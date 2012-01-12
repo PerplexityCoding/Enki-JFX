@@ -8,41 +8,41 @@ component AnkiPreferencesAdvanced {
 		text : "Advanced",
 		closable : false,
 		content : [
-			VBox {
+			VBox id ankiPreferencesAdvanced {
 				style : "-fx-padding: 5 10 10 5",
 				spacing : 5,
 				children : [
-					CheckBox {
+					CheckBox id alternativeThemes {
 						text : "Alternative themes"
 					},
-					CheckBox {
+					CheckBox id colourNextTimes {
 						text : "Colour next times"
 					},
-					CheckBox {
+					CheckBox id showTimer {
 						text : "Show timer"
 					},
-					CheckBox {
+					CheckBox id showTrayIcon {
 						text : "Show tray icon"
 					},
-					CheckBox {
+					CheckBox id stripHTML {
 						text : "Strip HTML when pasting text"
 					},
-					CheckBox {
+					CheckBox id showStudyOptions {
 						text : "Show study options on deck load"
 					},
-					CheckBox {
+					CheckBox id openLastDeck {
 						text : "Always open last deck on startup"
 					},
-					CheckBox {
+					CheckBox id showDecksWithCardsFirst {
 						text : "Show decks with cards due first in browser"
 					},
-					CheckBox {
+					CheckBox id optimizeForSmallScreen {
 						text : "Optimize for small screen"
 					},
-					CheckBox {
+					CheckBox id deleteOriginalMediaOnAdd{
 						text : "Delete original media on add"
 					},
-					CheckBox {
+					CheckBox id addHidderCharToText {
 						text : "Add hidden char to text (fixes Thai on OSX)"
 					},
 					HBox {
@@ -52,7 +52,7 @@ component AnkiPreferencesAdvanced {
 							Label {
 								text : "Max Deck name length in deck browser:"
 							},
-							TextField {
+							TextField id maxDeckNameLength {
 								prefWidth : 40
 							}
 						]
