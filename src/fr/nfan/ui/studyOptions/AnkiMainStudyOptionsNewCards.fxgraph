@@ -52,13 +52,15 @@ component AnkiMainStudyOptionsNewCards controlledby MainController {
 						style : "-fx-font-weight: bold"
 					},
 					HBox {
+						call HBox#hgrow : "ALWAYS",
 						children : [
 							Label {
 								text : "Show Chosen Categories" ,
-								prefWidth : 225
+								prefWidth : 2000
 							} ,
 							Button id changeNewStudyLimit {
-								text : "Change"
+								text : "Change",
+								minWidth : 90
 							}
 						]
 					}

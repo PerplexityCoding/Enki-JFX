@@ -23,7 +23,8 @@ component AnkiDeckProperties controlledby MainController {
 				alignment : "CENTER_RIGHT",
 				children : [
 					Button {
-						text : "Save &amp; Close"
+						text : "Save &amp; Close",
+						onAction : controllermethod saveDeckPreferences
 					},
 					Button {
 						text : "Cancel",

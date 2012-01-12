@@ -59,10 +59,11 @@ component AnkiMainStudyOptionsReviews controlledby MainController {
 						children : [
 							Label {
 								text : "Show Chosen Categories",
-								prefWidth : 225
+								prefWidth : 2000
 							},
 							Button id changeReviewStudyLimit {
-								text : "Change"
+								text : "Change",
+								minWidth : 90
 							}
 						]
 					}

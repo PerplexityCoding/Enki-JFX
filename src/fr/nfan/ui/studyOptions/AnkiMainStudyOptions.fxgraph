@@ -7,8 +7,8 @@ import fr.nfan.controller.*
 
 component AnkiMainStudyOptions controlledby MainController {
 	VBox id ankiStudyOptions {
-		maxWidth : 350,
-		minWidth : 350,
+		maxWidth : 320,
+		minWidth : 320,
 		visible : false,
 		children : [
 			HBox id studyOptionsTitle {
@@ -28,15 +28,16 @@ component AnkiMainStudyOptions controlledby MainController {
 			HBox {
 				spacing : 10,
 				style : "-fx-padding: 5 5 5 5",
+				call HBox#hgrow : "ALWAYS",
 				children : [
 					Button {
 						text : "Review",
-						prefWidth : 220,
+						prefWidth : 2000,
 						onAction : controllermethod onStartStudy
 					},
 					Button {
 						text : "Help",
-						prefWidth : 60
+						minWidth : 60
 					}
 				]
 			}

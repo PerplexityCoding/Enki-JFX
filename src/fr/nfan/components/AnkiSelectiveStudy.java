@@ -18,31 +18,51 @@ import fr.nfan.AnkiMainFx;
 
 public class AnkiSelectiveStudy extends AnkiJFXComponent {
 
+	private Deck deck;
+	
+	private RadioButton newCardSetting = null;
+	private RadioButton reviewSetting =  null;
+	private RadioButton bothSetting =  null;
+	
+	private ListView<String> listTagActive = null;
+	private ListView<String> listTagInactive = null;
+	private CheckBox listTagInactiveCheck = null;
+	private CheckBox listTagActiveCheck = null;
+	
 	public AnkiSelectiveStudy(Deck deck) {
 		super("studyOptions/AnkiMainStudyOptionsSelectiveStudy.fxml", "Selective Study - Anki JFX", 380, 380);
 		
-		initOptions(deck);
-		loadTags(deck);
+		this.deck = deck;
+		
+		initComponents();
 	}
 	
-	public void initOptions(Deck deck) {
+	@SuppressWarnings("unchecked")
+	public void initComponents() {
 		
-		RadioButton newCardSetting = (RadioButton) root.lookup("#newCardSetting");
-		RadioButton reviewSetting = (RadioButton) root.lookup("#reviewSetting");
-		RadioButton bothSetting = (RadioButton) root.lookup("#bothSetting");
+		newCardSetting = (RadioButton) root.lookup("#newCardSetting");
+		reviewSetting = (RadioButton) root.lookup("#reviewSetting");
+		bothSetting = (RadioButton) root.lookup("#bothSetting");
 		
-		final Deck[] arrayTrick = new Deck[] {deck};
 		EventHandler<ActionEvent> onChangeHandler = new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent event) {
-				loadTags(arrayTrick[0]);
+				loadComponents();
 			}
 		};
+		
+		listTagActive = (ListView<String>) root.lookup("#listTagActive");
+		listTagInactive = (ListView<String>) root.lookup("#listTagInactive");
+		
+		listTagInactiveCheck = (CheckBox) root.lookup("#listTagInactiveCheck");
+		listTagActiveCheck = (CheckBox) root.lookup("#listTagActiveCheck");
 		
 		newCardSetting.setOnAction(onChangeHandler);
 		reviewSetting.setOnAction(onChangeHandler);
 		bothSetting.setOnAction(onChangeHandler);
+		
+		loadComponents();
 	}
 	
 	private String[] split(String s) {
@@ -53,10 +73,7 @@ public class AnkiSelectiveStudy extends AnkiJFXComponent {
 		return s.split(" ");
 	}
 	
-	public void loadTags(Deck deck) {
-		RadioButton newCardSetting = (RadioButton) root.lookup("#newCardSetting");
-		RadioButton reviewSetting = (RadioButton) root.lookup("#reviewSetting");
-		RadioButton bothSetting = (RadioButton) root.lookup("#bothSetting");
+	public void loadComponents() {
 		
 		List<String> activeTags = new ArrayList<String>();
 		List<String> inactiveTags = new ArrayList<String>();
@@ -72,11 +89,10 @@ public class AnkiSelectiveStudy extends AnkiJFXComponent {
 		
 		String[] tags = deck.allTags_();
 		
-		ListView<String> listTagActive = (ListView<String>) root.lookup("#listTagActive");
 		listTagActive.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 		if (! activeTags.isEmpty()) {
 			listTagActive.setDisable(false);
-			((CheckBox) root.lookup("#listTagActiveCheck")).setSelected(true);
+			listTagActiveCheck.setSelected(true);
 		}
 		
 		for (int i = 0; i < tags.length; i++) {
@@ -86,11 +102,10 @@ public class AnkiSelectiveStudy extends AnkiJFXComponent {
 			}
 		}
 		
-		ListView<String> listTagInactive = (ListView<String>) root.lookup("#listTagInactive");
 		listTagInactive.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 		if (! inactiveTags.isEmpty()) {
 			listTagInactive.setDisable(false);
-			((CheckBox) root.lookup("#listTagInactiveCheck")).setSelected(true);
+			listTagInactiveCheck.setSelected(true);
 		}
 		
 		for (int i = 0; i < tags.length; i++) {
@@ -99,7 +114,6 @@ public class AnkiSelectiveStudy extends AnkiJFXComponent {
 				listTagInactive.getSelectionModel().select(i);
 			}
 		}
-		
 		
 	}
 

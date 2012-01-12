@@ -8,7 +8,7 @@ component AnkiDeckPropertiesBasicTab {
 		text : "Basic",
 		closable : false,
 		content : [
-			VBox id basicTabVbox {
+			VBox id basicTab {
 				children : [
 					Label {
 						text : "Synchronization",
@@ -16,19 +16,20 @@ component AnkiDeckPropertiesBasicTab {
 					},
 					HBox {
 						children : [
-							CheckBox,
+							CheckBox id synchronizeWithAnkiWeb,
 							Label {
 								text : "Synchronize this deck with AnkiWeb"
 							}
 						]
 					},
 					HBox {
+						minHeight : 22,
 						children : [
 							Label {
 								text : "Media URL",
 								minWidth : 90
 							},
-							TextField {
+							TextField id mediaUrl {
 								call HBox#hgrow : "ALWAYS"
 							}
 						]
@@ -40,7 +41,7 @@ component AnkiDeckPropertiesBasicTab {
 					HBox {
 						spacing : 5,
 						children : [
-							ListView {
+							ListView id models {
 								call HBox#hgrow : "ALWAYS"
 							},
 							VBox {
@@ -67,34 +68,37 @@ component AnkiDeckPropertiesBasicTab {
 						style : "-fx-font-weight: bold"
 					},
 					HBox {
+						minHeight : 22,
 						children : [
 							Label {
 								text : "Very high priority",
 								minWidth : 120
 							},
-							TextField {
+							TextField id veryHighPriority {
 								call HBox#hgrow : "ALWAYS"
 							}
 						]
 					},
 					HBox {
+						minHeight : 22,
 						children : [
 							Label {
 								text : "high priority",
 								minWidth : 120
 							},
-							TextField {
+							TextField id highPriority {
 								call HBox#hgrow : "ALWAYS"
 							}
 						]
 					},
 					HBox {
+						minHeight : 22,
 						children : [
 							Label {
 								text : "low priority",
 								minWidth : 120
 							},
-							TextField {
+							TextField id lowPriority {
 								call HBox#hgrow : "ALWAYS"
 							}
 						]

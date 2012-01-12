@@ -8,7 +8,7 @@ component AnkiDeckPropertiesAdvancedTab {
 		text : "Advanced",
 		closable : false,
 		content : [
-			VBox {
+			VBox id advancedTab {
 				style : "-fx-padding: 5 5 5 5",
 				spacing : 4,
 				children : [
@@ -19,7 +19,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Button 1 delay",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id button1Delay {
 								prefWidth : 50
 							},
 							Label {
@@ -34,7 +34,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Button 1 multiplier",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id button1Multiplier {
 								prefWidth : 50
 							},
 							Label {
@@ -49,7 +49,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Mature bonus",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id matureBonus {
 								prefWidth : 50
 							},
 							Label {
@@ -65,13 +65,13 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Initial button 2 interval",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id intialButton2Min {
 								prefWidth : 50
 							},
 							Label {
 								text : "~"
 							},
-							TextField {
+							TextField id intialButton2Max {
 								prefWidth : 50
 							},
 							Label {
@@ -86,13 +86,13 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Initial button 3 interval",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id intialButton3Min {
 								prefWidth : 50
 							},
 							Label {
 								text : "~"
 							},
-							TextField {
+							TextField id intialButton3Max {
 								prefWidth : 50
 							},
 							Label {
@@ -107,13 +107,13 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Initial button 4 interval",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id intialButton4Min {
 								prefWidth : 50
 							},
 							Label {
 								text : "~"
 							},
-							TextField {
+							TextField id intialButton4Max {
 								prefWidth : 50
 							},
 							Label {
@@ -129,7 +129,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Leech threshold",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id leechFailures {
 								prefWidth : 50
 							},
 							Label {
@@ -144,7 +144,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Shift midnight by",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id shiftMidnightBy {
 								prefWidth : 50
 							},
 							Label {
@@ -159,7 +159,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Sibling delay (new cards)",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id siblingDelayNewCard {
 								prefWidth : 50
 							},
 							Label {
@@ -174,7 +174,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Sibling delay (reviews)",
 								prefWidth : 140
 							},
-							TextField {
+							TextField id siblingDelayReview {
 								prefWidth : 50
 							},
 							Label {
@@ -190,7 +190,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Show failed cards early",
 								prefWidth : 140
 							},
-							CheckBox
+							CheckBox id showFailedCardsEarly
 						]
 					},
 					HBox {
@@ -200,7 +200,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Suspend leeches",
 								prefWidth : 140
 							},
-							CheckBox
+							CheckBox id suspendLeeches
 						]
 					},
 					HBox {
@@ -210,7 +210,7 @@ component AnkiDeckPropertiesAdvancedTab {
 								text : "Per-day scheduling",
 								prefWidth : 140
 							},
-							CheckBox
+							CheckBox id perDayScheduling
 						]
 					}
 				]

@@ -33,4 +33,5 @@ public class AnkiJFXComponent extends Stage {
 			e.printStackTrace();
 		}
 	}
+	
 }

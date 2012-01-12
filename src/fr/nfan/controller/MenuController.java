@@ -47,7 +47,9 @@ public class MenuController {
 	
 	@FXML
 	public void onDeckPropertiesClick(ActionEvent event) {
-		new AnkiDeckProperties();
+		if (mainFx.getActiveDeck() != null) {
+			mainFx.setDeckProperties(new AnkiDeckProperties(mainFx.getActiveDeck()));
+		}
 	}
 	
 	@FXML

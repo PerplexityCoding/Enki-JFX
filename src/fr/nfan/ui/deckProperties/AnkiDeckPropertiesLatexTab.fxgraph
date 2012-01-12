@@ -8,17 +8,17 @@ component AnkiDeckPropertiesLatexTab {
 		text : "Latex",
 		closable : false,
 		content : [
-			VBox {
+			VBox id latex {
 				style : "-fx-padding: 5 5 5 5",
 				children : [
 					Label {
 						text : "Header"
 					},
-					TextArea,
+					TextArea id header,
 					Label {
 						text : "Footer"
 					},
-					TextArea
+					TextArea id footer
 				]
 			}
 		]

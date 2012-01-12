@@ -1,16 +1,16 @@
 package fr.nfan.controller;
 
-import java.util.prefs.Preferences;
-
-import com.ichi2.anki.model.Deck;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+
+import com.ichi2.anki.model.Deck;
+
 import fr.nfan.AnkiMainFx;
 import fr.nfan.AnkiMainFx.State;
+import fr.nfan.components.AnkiDeckProperties;
 import fr.nfan.components.AnkiPreferences;
 import fr.nfan.components.AnkiSelectiveStudy;
 
@@ -25,6 +25,7 @@ public class MainController {
 	@FXML
 	public void onOpenDeck(ActionEvent event, Deck deck) {
 		mainFx.setStudyOptionsValues(deck);
+		mainFx.setActiveDeck(deck);
 		mainFx.changeState(State.STUDY_OPTIONS);
 	}
 	
@@ -86,6 +87,12 @@ public class MainController {
 		AnkiPreferences prefs = mainFx.getPreferences();
 		prefs.storePropertes();
 		prefs.close();
+	}
+	
+	public void saveDeckPreferences(ActionEvent event) {
+		AnkiDeckProperties deckProps = mainFx.getDeckProperties();
+		deckProps.storeProperties();
+		deckProps.close();
 	}
 
 }

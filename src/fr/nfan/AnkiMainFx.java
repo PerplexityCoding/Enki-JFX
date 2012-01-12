@@ -30,6 +30,7 @@ import com.ichi2.anki.model.Stats;
 import com.ichi2.anki.service.DeckManager;
 import com.ichi2.utils.MathUtils;
 
+import fr.nfan.components.AnkiDeckProperties;
 import fr.nfan.components.AnkiPreferences;
 import fr.nfan.controller.MainController;
 import fr.nfan.services.AnkiPreferencesService;
@@ -51,6 +52,14 @@ public class AnkiMainFx extends Application {
 	private static State mainState;
 	private MainController controller;
 	
+	private Deck activeDeck;
+	
+	/*
+	 * Components
+	 */
+	private AnkiPreferences preferences;
+	private AnkiDeckProperties deckProperties;
+	
 	public static AnkiMainFx getInstance() {
 		return instance;
 	}
@@ -61,11 +70,6 @@ public class AnkiMainFx extends Application {
 		}
 		instance = this;
 	}
-	
-	/*
-	 * Components
-	 */
-	private AnkiPreferences preferences;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -292,5 +296,21 @@ public class AnkiMainFx extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public Deck getActiveDeck() {
+		return activeDeck;
+	}
+
+	public void setActiveDeck(Deck activeDeck) {
+		this.activeDeck = activeDeck;
+	}
+
+	public AnkiDeckProperties getDeckProperties() {
+		return deckProperties;
+	}
+
+	public void setDeckProperties(AnkiDeckProperties deckProperties) {
+		this.deckProperties = deckProperties;
 	}
 }
